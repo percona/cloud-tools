@@ -11,7 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
-   SystemInformation
+   Install
+   SystemInfo
 
 
 Indices and tables
