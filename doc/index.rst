@@ -7,6 +7,7 @@ Welcome to Percona Cloud Tools documentation!
 =============================================
 
 Contents:
+---------
 
 .. toctree::
    :maxdepth: 1
