@@ -1,3 +1,5 @@
+.. _system-info:
+
 System Info
 ###########
 
