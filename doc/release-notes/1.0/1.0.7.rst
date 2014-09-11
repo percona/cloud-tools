@@ -14,7 +14,7 @@ Bugs Fixed
 
  Count metric which is used for displaying number of samples was missing one sample per minute.
 
- If gathering |MySQL| metrics from server takes to long, it will be skipped to avoid saturating the server even further.
+ If gathering MySQL metrics from server takes to long, it will be skipped to avoid saturating the server even further.
 
  Bad data file was causing agent to stop sending but keep spooling the data. Error handling for bad data files has been improved not to cause unnecessary stalls and zero-length data files are now ignored/removed (and cause a warning). 
 

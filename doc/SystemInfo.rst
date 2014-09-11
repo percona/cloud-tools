@@ -18,7 +18,7 @@ Requirements
   Installation and update instructions for *Percona Agent* can be found `here <https://github.com/percona/percona-agent/blob/release/INSTALL.md>`_
 * `Percona Toolkit <http://www.percona.com/software/percona-toolkit>`_ installed on the same server as *Percona Agent*
 
-  Installation instructions for *Percona Toolkit* can be found `here <http://www.percona.com/doc/percona-toolkit/2.2/installation.html>`_
+  Installation instructions for *Percona Toolkit* can be found in the *Percona Toolkit* `manual <http://www.percona.com/doc/percona-toolkit/2.2/installation.html>`_
 
 Usage
 *****
