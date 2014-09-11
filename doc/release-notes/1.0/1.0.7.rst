@@ -1,0 +1,21 @@
+=====================
+ Percona Agent 1.0.7
+=====================
+
+Percona is glad to announce the release of Percona Agent 1.0.7 on September 5th 2014. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/1.0.7/>`_. This version of ``pt-agent`` has been built with with Go MySQL driver ver. `0b000424e5 <https://github.com/go-sql-driver/mysql/commit/0b000424e546f305e0bd47856d5fcb904c1a0eb4>`_.
+
+New Features
+------------
+
+ ``pt-agent`` is now able to gather the detailed system and |MySQL| server information. This information is gathered by running the ``pt-summary`` and ``pt-mysql-summary`` on a server. Gathered information will be displayed in the ``System Info`` section in `Percona Cloud Tools <https://cloud.percona.com/>`_.
+
+Bugs Fixed
+----------
+
+ Count metric which is used for displaying number of samples was missing one sample per minute.
+
+ If gathering |MySQL| metrics from server takes to long, it will be skipped to avoid saturating the server even further.
+
+ Bad data file was causing agent to stop sending but keep spooling the data. Error handling for bad data files has been improved not to cause unnecessary stalls and zero-length data files are now ignored/removed (and cause a warning). 
+
+ Running ``EXPLAIN`` when ``key_len`` column contained more than one value wasn't supported.

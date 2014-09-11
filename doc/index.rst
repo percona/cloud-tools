@@ -14,6 +14,14 @@ Contents:
    Install
    SystemInfo
 
+Reference
+=========
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+    release-notes/release-notes_index
 
 Indices and tables
 ==================
