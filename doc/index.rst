@@ -21,7 +21,7 @@ Reference
    :maxdepth: 1
    :glob:
 
-    release-notes
+   release-notes
 
 Indices and tables
 ==================
