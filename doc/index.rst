@@ -13,7 +13,7 @@ Contents:
 
    Install
    SystemInfo
-   release-notes
+   ReleaseNotes
 
 Indices and tables
 ==================
