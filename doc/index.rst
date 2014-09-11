@@ -6,8 +6,8 @@
 Welcome to Percona Cloud Tools documentation!
 =============================================
 
-Contents:
----------
+Contents
+--------
 
 .. toctree::
    :maxdepth: 1
@@ -16,7 +16,7 @@ Contents:
    SystemInfo
 
 Reference
-=========
+---------
 
 .. toctree::
    :maxdepth: 1
