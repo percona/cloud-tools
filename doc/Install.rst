@@ -15,7 +15,7 @@ Quick Install
 1. `Get your API key. <https://cloud.percona.com/api-key>`_
 2. As root, run in the terminal:
 
-:sh:`curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key <API key>`
+:sh:`curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key="<API key>"`
 
 By default a quick install:
 
@@ -135,7 +135,7 @@ When new version is available
 1. `Get your api-key <https://cloud.percona.com/api-key>`_
 2. Run in terminal as root:
 
-:sh:`curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key <API key>`
+:sh:`curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key="<API key>"`
 
 With *Standard Install*
 =======================
