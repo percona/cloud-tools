@@ -6,11 +6,20 @@
 Welcome to Percona Cloud Tools documentation!
 =============================================
 
-Contents:
----------
+Contents
+--------
 
 .. toctree::
    :maxdepth: 1
 
    Install
    SystemInfo
+
+Reference
+---------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   ReleaseNotes
