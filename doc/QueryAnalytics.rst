@@ -38,7 +38,7 @@ You can sort these queries by load they were causing on server (SUM) or by the a
 
 You can filter this information for the time period by selecting the predefined time periods or by creating your own by selecting the calendar icon. 
 
-[SELECTOR PICTURE]
+.. image:: images/selector.png
 
 Queries can also be filtered by :ref:`query_tags` and :ref:`query_status`.
 
@@ -46,18 +46,17 @@ When you click on any of the queries in the list you'll  get more details in the
 
  * Query Metrics - This section provides the detailed query metrics for the selected query. Some of the provided metrics are: Query count, Query_time, Lock_time, Rows_sent, Rows_examined, Rows_affected, and Bytes_sent. 
 
-[QUERY METRICS PICTURE]
+.. image:: images/query_metrics.png
 
- For each of the metrics Query Analytics provide the historic data. Each of the metrics can be sorted by: Percent, Total, Average, Minimum, Median, 95%, Maximum, and Standard Deviation to provide the additional and
+For each of the metrics Query Analytics provide the historic data. Each of the metrics can be sorted by: Percent, Total, Average, Minimum, Median, 95%, Maximum, and Standard Deviation to provide the additional and
 
  * Query Plan - This section shows information about the query plan for the selected query. Information available is: Filesort, Filesort on disk, Full join, Full scan, Query cache hits, Temporary tables, Temporary tables on disk
 
-[QUERY PLAN PICTURE]
+.. image:: images/query_plan.png
 
  * Query Example - This section provides the real example of the selected query. 
  
-[QUERY EXAMPLE PICTURE]
-
+.. image:: images/query_example.png
 
 .. _query_status:
 
@@ -67,14 +66,18 @@ Query Review
 Query Review gives you the right resources to efficiently review your application's most important database activities. This enable you to assess, categorize, and comment on each of your application's queries.
 New, Reviewed, Needs Attention
 
-When you review your application's queries, Percona Cloud Tools will keep track of queries that have been evaluated. All queries can be marked as ``New``,``Reviewed``, or ``Needs attention``. All the queries are marked as ``New`` by default. These three phrases will save you significant time and can help you more efficiently perform query analysis as a team. New filters in Percona Cloud Tools also allow you to quickly assess the performance of new queries introduced in your latest code deployment.
+When you review your application's queries, Percona Cloud Tools will keep track of queries that have been evaluated. All queries can be marked as ``New``, ``Reviewed``, or ``Needs attention``. All the queries are marked as ``New`` by default. These three phrases will save you significant time and can help you more efficiently perform query analysis as a team. New filters in Percona Cloud Tools also allow you to quickly assess the performance of new queries introduced in your latest code deployment.
+
+.. image:: images/query_review.png
 
 .. _query_tags:
 
 Query Tags
 ==========
 
-Query tags are a flexible way to allow your team to use your own language to categorize queries. There are many ways to use tags. One approach we recommend is to record which queries belong to different sub-systems of your application such as ``checkout`` or ``hotel-search``. This should help to connect the experiences of your application’s users to the underlying queries.
+Query tags are a flexible way to allow your team to use your own language to categorize queries. There are many ways to use tags. One approach we recommend is to record which queries belong to different sub-systems of your application such as ``checkout`` or ``hotel-search``. This should help to connect the experiences of your application's users to the underlying queries.
+
+.. image:: images/tags.png
 
 Comments
 ========
@@ -88,13 +91,15 @@ Query analytics use the MySQL slow query log to gather the data. Although the de
 
 In order to configure the Query Analytics you need to go to "Configure" tab, select "MySQL" and find your server in the list. 
 
-[MYSQL CONFIGURE PICTURE]
+.. image:: images/qa_agent_config.png
 
 You click on Query Analytics:
 
-[QA CONFIG PICTURE]
+.. image:: images/qa_config.png
 
 Here you can change the values of Long query time, maximum size of the slow query log, removing the old slow query logs and will the agent send and store the real queries or will the query fingerprints be used instead.
+
+.. image:: images/qa_config_slowlog.png
 
 Using Performance Schema 
 ========================
@@ -103,7 +108,7 @@ The MySQL slow log is a wealth of indispensable data about queries that you cann
 
 To use the Performance Schema you'll need to enable it on the server first (by setting the ``performance_scema`` variable to ``ON``) and configure the Query Analytics to use it instead of slow log for collecting the data.
 
-[QA CONFIG PICTURE P_S]
+.. image:: images/qa_config_ps.png
 
 Other Reading
 *************
