@@ -14,6 +14,7 @@ Contents
 
    Install
    SystemInfo
+   QueryAnalytics
 
 Reference
 ---------

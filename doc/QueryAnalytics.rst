@@ -34,9 +34,9 @@ Following information is available in the Query Profile:
 
 You can sort these queries by load they were causing on server (SUM) or by the amount of time it took to server to run them (MAX).
 
-[SUM/MAX PICTURE]
+.. image:: images/sum_max.png
 
-You can filter this information by the time period by selecting the predefined time periods or by creating your own by selecting the calendar icon. 
+You can filter this information for the time period by selecting the predefined time periods or by creating your own by selecting the calendar icon. 
 
 [SELECTOR PICTURE]
 
@@ -48,7 +48,7 @@ When you click on any of the queries in the list you'll  get more details in the
 
 [QUERY METRICS PICTURE]
 
- For each of the metrics Query Analytics provide the historic data. Each of the metrics can be sorted by: Percent, Total, Average, Minimum, Median, 95%, Maximum, and Stddev to provide the additional and
+ For each of the metrics Query Analytics provide the historic data. Each of the metrics can be sorted by: Percent, Total, Average, Minimum, Median, 95%, Maximum, and Standard Deviation to provide the additional and
 
  * Query Plan - This section shows information about the query plan for the selected query. Information available is: Filesort, Filesort on disk, Full join, Full scan, Query cache hits, Temporary tables, Temporary tables on disk
 
@@ -81,3 +81,33 @@ Comments
 
 Comments enable you and your team to better collaborate on improving the performance of your application as a team. Anyone that is a part of your organization can read and create query comments.
  
+Configuring Query Analytics
+***************************
+
+Query analytics use the MySQL slow query log to gather the data. Although the default values should be good for most of the users, you can configure the analytics to provide additional data or change the data source from slow query log to Performance Schema.
+
+In order to configure the Query Analytics you need to go to "Configure" tab, select "MySQL" and find your server in the list. 
+
+[MYSQL CONFIGURE PICTURE]
+
+You click on Query Analytics:
+
+[QA CONFIG PICTURE]
+
+Here you can change the values of Long query time, maximum size of the slow query log, removing the old slow query logs and will the agent send and store the real queries or will the query fingerprints be used instead.
+
+Using Performance Schema 
+========================
+
+The MySQL slow log is a wealth of indispensable data about queries that you cannot get anywhere else. That's why it's the default for Percona Cloud Tools Query Analytics. Like most things, however, it has tradeoffs: for one, it can be time-consuming to parse, especially on very busy servers. Or, in the case of Amazon RDS, the slow log may simply not be available. With MySQL 5.6 or newer (including Percona Server 5.6 or newer) you can parse queries from the Performance Schema. It's not as data-rich as the slow log, but it has the basics and it's a great alternative (and sometimes the only alternative) to the slow log.
+
+To use the Performance Schema you'll need to enable it on the server first (by setting the ``performance_scema`` variable to ``ON``) and configure the Query Analytics to use it instead of slow log for collecting the data.
+
+[QA CONFIG PICTURE P_S]
+
+Other Reading
+*************
+
+ * `MySQL performance optimization: Don’t guess! Measure with Percona Cloud Tools <http://www.percona.com/blog/2014/01/29/mysql-performance-optimization-dont-guess-measure-with-percona-cloud-tools/>`_
+ * `Measure the impact of MySQL configuration changes with Percona Cloud Tools <http://www.percona.com/blog/2014/06/11/measure-impact-mysql-configuration-changes-percona-cloud-tools/>`_
+ * `PERFORMANCE_SCHEMA vs Slow Query Log <http://www.percona.com/blog/2014/02/11/performance_schema-vs-slow-query-log/>`_
