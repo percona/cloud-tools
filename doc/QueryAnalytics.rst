@@ -6,7 +6,7 @@ Query Analytics
 About
 *****
 
-**Query Analyitics** enables DBAs and application developers to analyze MySQL queries over long periods of time and shines a spotlight on problems. Query Analytics helps you:
+**Query Analytics** enables DBAs and application developers to analyze MySQL queries over long periods of time and shines a spotlight on problems. Query Analytics helps you:
 
  * Be sure your queries (tasks) are performed as expected
  * Queries are executed within the time frame you need
@@ -44,19 +44,23 @@ Queries can also be filtered by :ref:`query_tags` and :ref:`query_status`.
 
 When you click on any of the queries in the list you'll  get more details in the Query Details section. Query details provide the additional information:
 
- * Query Metrics - This section provides the detailed query metrics for the selected query. Some of the provided metrics are: Query count, Query_time, Lock_time, Rows_sent, Rows_examined, Rows_affected, and Bytes_sent. 
+* Query Metrics - This section provides the detailed query metrics for the selected query. Some of the provided metrics are: Query count, Query_time, Lock_time, Rows_sent, Rows_examined, Rows_affected, and Bytes_sent. 
 
 .. image:: images/query_metrics.png
 
-For each of the metrics Query Analytics provide the historic data. Each of the metrics can be sorted by: Percent, Total, Average, Minimum, Median, 95%, Maximum, and Standard Deviation to provide the additional and
+For each of the metrics Query Analytics provide the historic data. Each of the metrics can be sorted by: Percent, Total, Average, Minimum, Median, 95%, Maximum, and Standard Deviation to provide the additional and historic information:
 
- * Query Plan - This section shows information about the query plan for the selected query. Information available is: Filesort, Filesort on disk, Full join, Full scan, Query cache hits, Temporary tables, Temporary tables on disk
+.. image:: images/query_metrics_historic.png
+
+* Query Plan - This section shows information about the query plan for the selected query. Information available is: Filesort, Filesort on disk, Full join, Full scan, Query cache hits, Temporary tables, Temporary tables on disk:
 
 .. image:: images/query_plan.png
 
- * Query Example - This section provides the real example of the selected query. 
+* Query Example - This section provides the real example of the selected query. 
  
 .. image:: images/query_example.png
+
+With **Query Analytics** you can run the `EXPLAIN` command just by clicking the ``Run EXPLAIN`` from the **Percona Cloud Tools** without copy/pasting it to the server. **NOTE:** For server versions prior to 5.6, only ``EXPLAIN`` for ``SELECT`` is available due to server implementations. Running ``EXPLAIN`` for ``UPGRADE``/``INSERT``/``DELETE`` is available for MySQL and Percona Server 5.6 or newer, but you'll need to add the additional grants to the ``percona-agent`` user. 
 
 .. _query_status:
 
