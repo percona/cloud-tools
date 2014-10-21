@@ -21,7 +21,7 @@ Performance dashboard provides the following information:
 
  * Response 95% - 95% of the values are less than or equal to this value. It shows user experience in most of the cases.
 
-Dashboard provides the quick links to the :ref:`query_analytics` and *metrics* for each server.
+Dashboard provides the quick links to the :ref:`query-analytics` and *metrics* for each server.
 
 Reporting interval for the dashboards can be configured by selecting the predefined time periods or by creating your own by selecting the calendar icon.
 
