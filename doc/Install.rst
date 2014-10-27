@@ -41,7 +41,7 @@ By default, the installer is automatic and interactive: it tries to do everythin
 Automated Install
 *****************
 
-To automate installation of *percona-agent* (e.g. for Chef, Puppet, etc.) add the :sh:`-interacive=false` flag to a `Standard Install`_ to prevent the installer from prompting. A `Quick Install`_ can be used too because it sets :sh:`-interacive=false` by default.
+To automate installation of *percona-agent* (e.g. for Chef, Puppet, etc.) add the :sh:`-interactive=false` flag to a `Standard Install`_ to prevent the installer from prompting. A `Quick Install`_ can be used too because it sets :sh:`-interacive=false` by default.
 
 Automation relies on:
 
