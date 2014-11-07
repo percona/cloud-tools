@@ -19,7 +19,7 @@ Performance dashboard provides the following information:
 
  * Load - Server load
 
- * Response 95% - 95% of the values are less than or equal to this value. It shows user experience in most of the cases.
+ * Response 95% - Shows the response time in most of the cases (this means that users will get this response time in 95% of the cases).
 
 Dashboard provides the quick links to the :ref:`query-analytics` and *metrics* for each server.
 

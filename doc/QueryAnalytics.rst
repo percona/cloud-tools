@@ -21,12 +21,12 @@ Query profile provides the general information about the queries executed on the
 Following information is available in the Query Profile:
 
  * Rank - The query's rank within the entire set of queries analyzed
- * Query - The distilled query
- * Query ID - The query's fingerprint
+ * Query - The distilled query. This is the abstracted form of a query, which makes it possible to group similar queries together. Abstracting a query removes literal values, normalizes whitespace, etc. 
+ * Query ID - The query's unique ID
  * Queries - The number of times this query was executed
  * QPS - The number of queries per second that the server was executing
- * Load - The wall clock time the server is busy with queries
- * Load % - Percentage of the wall clock time the server is busy with queries
+ * Load - The wall clock time (in seconds) server spent running the query in given time range.
+ * Load % - Percentage of the wall clock time the server was running the query
  * Total Time - The total time of all executed queries (for server), or total time of fingerprinted query (for specific query). Queries with the biggest Total time value are causing most of the server load.
  * Avg Time - The average time of query execution
  * 95% - The 95th percentile; 95% of the values are less than or equal to this value. Shows user experience in most of the cases.
