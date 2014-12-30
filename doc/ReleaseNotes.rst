@@ -10,4 +10,5 @@ Percona Agent 1.0
    :glob:
 
    release-notes/1.0/*
+   release-notes/1.0/1.0.1*
 
