@@ -1,0 +1,37 @@
+======================
+ Percona Agent 1.0.10
+======================
+
+Percona is glad to announce the release of Percona Agent 1.0.10 on December 30th 2014. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/1.0.10`_. Percona Agent can be `installed <http://cloud-docs.percona.com/Install.html>`_ or `upgraded <http://cloud-docs.percona.com/Install.html#updating-the-agent>`_ as described in the `manual <http://cloud-docs.percona.com/index.html>`_. 
+
+New Features
+------------
+
+ * *Percona Agent* has improved the data sender timeout handling.
+
+ * New ``--status`` option has been implemented which can be used to get information on agent's status via API
+
+ * *Percona Agent* now enables the data compression when it gets installed.
+
+ * New ``--agent-mysql-user`` and ``--agent-mysql-pass`` options have been implemented to support installing agent with already existing user which has proper privileges on the server.
+
+ * *Percona Agent* now provides user-friendly error messages with additional details for troubleshooting, instead of general ``Error has occured`` message. 
+ 
+ * *Percona Agent* now reports sender statistics for last 24 hours instead of reporting just the last value.
+
+Bugs Fixed
+----------
+
+ * In some cases *Percona Agent* could use all *MySQL* connections which could lead to an outage.
+ 
+ * The installation script did not work with ``--help`` option if the agent was already installed/
+
+ * InnoDB Stats were not re-enabled after MySQL server was restarted.
+
+ * Due to timeout error while closing the websocket, the agent could disconnect from the API without the API noticing it.
+ 
+ * In some cases ``USE database`` lines in the slow query log were not parsed correctly.
+
+ * *MySQL* restart monitor could send false-positive signals which could cause agent to unnecessary restart :ref:`query-analytics`.
+
+ *  
