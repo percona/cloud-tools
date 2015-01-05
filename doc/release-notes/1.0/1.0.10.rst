@@ -23,9 +23,9 @@ New Features
  
  * *Percona Agent* now provides better insight into the agent's server-side data spool by implementing the ``data-spooler-count``, ``data-spooler-size``, and ``data-spooler-oldest`` statuses.
 
- * Normally agent status is only obtainable via API. If API or network is down, ``SIGUSR1`` signal can be now used by user to get agent status locally. 
+ * Normally agent status is only obtainable via API. If API or network is down, ``SIGUSR1`` signal can now be used by user to get agent status locally. 
 
- * In case agent's primary websocket fails somehow, ``SIGHUP`` signal can be used to provide a local, manual override to reconnect without having to restart the whole agent. I.e. no interruption of data collection.
+ * In case agent's primary websocket fails somehow, ``SIGHUP`` signal can be used to provide a local, manual override to reconnect without having to restart the whole agent. I.e. without interrupting the data collection.
 
 Bugs Fixed
 ----------
