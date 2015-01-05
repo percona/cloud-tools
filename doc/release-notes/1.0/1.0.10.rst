@@ -19,7 +19,7 @@ New Features
  
  * *Percona Agent* now reports sender statistics for last 24 hours alongside with the last value.
 
- * *Percona Agent* now sets up the percona agent user with `max_user_connections <https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_user_connections>`_ set to ``5``, to remove the possibility that *Percona Agent* could use up all the connections. This change only affects the new installations (unless the same limit is added manually for existing users).
+ * *Percona Agent* now sets up the percona agent user with `max_user_connections <https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_user_connections>`_ set to ``5`` to remove the possibility that *Percona Agent* could use up all the connections. This change only affects the new installations (unless the same limit is added manually for existing users).
  
 Bugs Fixed
 ----------
