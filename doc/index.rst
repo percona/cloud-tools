@@ -13,6 +13,8 @@ Contents
    :maxdepth: 1
 
    Install
+   Performance
+   QueryAnalytics
    SystemInfo
 
 Reference
