@@ -25,3 +25,13 @@ Reference
    :glob:
 
    ReleaseNotes
+   SytemRequirements
+
+Help and Support
+----------------
+
+* If you're a Percona Support customer, get help through the `Percona Customer Portal <https://customers.percona.com/>`_.
+
+* For bugs, please create an issue at https://jira.percona.com.
+
+* For everything else, please ask, share, and help others on the `Percona Cloud Tools Community Forum <http://www.percona.com/forums/questions-discussions/percona-cloud-tools>`_.

@@ -105,6 +105,8 @@ Here you can change the values of Long query time, maximum size of the slow quer
 
 .. image:: images/qa_config_slowlog.png
 
+.. _qa_performance_schema:
+
 Using Performance Schema 
 ========================
 
