@@ -25,7 +25,7 @@ Reference
    :glob:
 
    ReleaseNotes
-   SytemRequirements
+   SystemRequirements
 
 Help and Support
 ----------------
