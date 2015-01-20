@@ -103,9 +103,9 @@ MySQL Options
 +-------------------+---------+---------------------------------------+
 |-mysql-socket      |         | MySQL socket file                     |
 +-------------------+---------+---------------------------------------+
-|-agent-mysql-user  +         + MySQL user for the Percona Agent      +
+|-agent-mysql-user  |         | MySQL user for the Percona Agent      +
 +-------------------+---------+---------------------------------------+
-|-agent-mysql-pass  +         + MySQL password for the Percona Agent  +
+|-agent-mysql-pass  |         | MySQL password for the Percona Agent  +
 +-------------------+---------+---------------------------------------+
 
 To get list of all flags run :sh:`./install -help`
@@ -121,6 +121,10 @@ The agent can be installed in automated mode using -agent-mysql-user and -agent-
 
 Example:
 :sh:`./install -interactive=false -create-mysql-user=false -agent-mysql-user=<username> -agent-mysql-pass=<password>`
+
+Note:
+
+Using -agent-mysql-user will automatically disable -create-mysql-user
 
 Non-MySQL Install
 *****************
