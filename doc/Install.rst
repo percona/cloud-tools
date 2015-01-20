@@ -86,23 +86,27 @@ The percona-agent MySQL user password is randomly generated and can be viewed la
 MySQL Options
 *************
 
-+-------------------+---------+-----------------------------+
-| Flag              | Default | Description                 |
-+===================+=========+=============================+
-|-mysql             | true    | Install for MySQL           |
-+-------------------+---------+-----------------------------+
-|-create-mysql-user | true    | Create MySQL user for agent |
-+-------------------+---------+-----------------------------+
-|-mysql-user        |         | MySQL username              |
-+-------------------+---------+-----------------------------+
-|-mysql-pass        |         | MySQL password              |
-+-------------------+---------+-----------------------------+
-|-mysql-host        |         | MySQL host                  |
-+-------------------+---------+-----------------------------+
-|-mysql-port        |         | MySQL port                  |
-+-------------------+---------+-----------------------------+
-|-mysql-socket      |         | MySQL socket file           |
-+-------------------+---------+-----------------------------+
++-------------------+---------+---------------------------------------+
+| Flag              | Default | Description                           |
++===================+=========+=======================================+
+|-mysql             | true    | Install for MySQL                     |
++-------------------+---------+---------------------------------------+
+|-create-mysql-user | true    | Create MySQL user for agent           |
++-------------------+---------+---------------------------------------+
+|-mysql-user        |         | MySQL username                        |
++-------------------+---------+---------------------------------------+
+|-mysql-pass        |         | MySQL password                        |
++-------------------+---------+---------------------------------------+
+|-mysql-host        |         | MySQL host                            |
++-------------------+---------+---------------------------------------+
+|-mysql-port        |         | MySQL port                            |
++-------------------+---------+---------------------------------------+
+|-mysql-socket      |         | MySQL socket file                     |
++-------------------+---------+---------------------------------------+
+|-agent-mysql-user  +         + MySQL user for the Percona Agent      +
++-------------------+---------+---------------------------------------+
+|-agent-mysql-pass  +         + MySQL password for the Percona Agent  +
++-------------------+---------+---------------------------------------+
 
 To get list of all flags run :sh:`./install -help`
 
@@ -111,9 +115,12 @@ MySQL options specified on the command line override (take precedence over) MySQ
 Slave Install
 *************
 
-To install *percon-agent* on a slave, first install it on the master, then on the slave run the :sh:`install` script with :sh:`-create-mysql-user=false` and it will prompt you for the existing percona-agent MySQL user credentials.
+To install *percona-agent* on a slave, first install it on the master, then on the slave run the :sh:`install` script with :sh:`-create-mysql-user=false` and it will prompt you for the existing percona-agent MySQL user credentials.
 
-Since this requires a prompt, a slave install does not currently work for an `Automated Install`_.
+The agent can be installed in automated mode using -agent-mysql-user and -agent-mysql-pass cli parameters.
+
+Example:
+:sh:`./install -interactive=false -create-mysql-user=false -agent-mysql-user=<username> -agent-mysql-pass=<password>`
 
 Non-MySQL Install
 *****************
