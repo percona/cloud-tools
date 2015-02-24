@@ -2,7 +2,7 @@
  Percona Agent 1.0.11
 ======================
 
-Percona is glad to announce the release of Percona Agent 1.0.11 on February 23rd 2015. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/1.0.11>`_. Percona Agent can be `installed <http://cloud-docs.percona.com/Install.html>`_ or `upgraded <http://cloud-docs.percona.com/Install.html#updating-the-agent>`_ as described in the `manual <http://cloud-docs.percona.com/index.html>`_. 
+Percona is glad to announce the release of Percona Agent 1.0.11 on February 24th 2015. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/1.0.11>`_. Percona Agent can be `installed <http://cloud-docs.percona.com/Install.html>`_ or `upgraded <http://cloud-docs.percona.com/Install.html#updating-the-agent>`_ as described in the `manual <http://cloud-docs.percona.com/index.html>`_. 
 
 New Features
 ------------
