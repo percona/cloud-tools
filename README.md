@@ -2,7 +2,7 @@
 ##Agent installation documentation.##
 
 The documentation is written in reStructuredText format.
-You can check the syntax [here](http://en.wikipedia.org/wiki/ReStructuredText)  
+You can check the syntax [here](http://en.wikipedia.org/wiki/ReStructuredText).
 
 ##Deploying the docuemntation##
    
