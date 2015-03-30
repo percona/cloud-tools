@@ -3,8 +3,29 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Percona Cloud Tools documentation!
+.. highlight:: bash
+
+Welcome to Percona Cloud Tools Documentation!
 =============================================
+
+Percona Cloud Tools (PCT) is a cloud-based monitoring service for MySQL servers. It provides valuable insight into your database and applications that rely on MySQL performance.
+
+Data is collected using a Percona Agent that runs on the server. The agent sends information to the cloud, where it is processed and made accessible through a web interface hosted by Percona.
+
+(ILLUSTRATION)
+
+Quick Start
+-----------
+
+To start using PCT:
+
+1. Go to https://cloud.percona.com, create a :ref:`account` and log in.
+#. Get your API key at https://cloud.percona.com/api-key.
+#. Install :ref:`agent` by running the following command as root:
+
+   ::
+
+   $ curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key="<API key>"
 
 Contents
 --------
@@ -12,20 +33,15 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   Install
+   Account
+   Agent
+   WebInterface
    Performance
+   MetricsMonitor
    QueryAnalytics
-   SystemInfo
-
-Reference
----------
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   ReleaseNotes
-   SystemRequirements
+   Configuration
+   PerfSchema
+   FAQ
 
 Help and Support
 ----------------
