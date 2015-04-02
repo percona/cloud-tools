@@ -1,3 +1,5 @@
+.. _console:
+
 Web Interface
 =============
 
