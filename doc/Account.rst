@@ -3,7 +3,8 @@
 PCT Account
 ===========
 
-Percona Cloud Tools (PCT) is a cloud-based service used by many different people.
+Percona Cloud Tools (PCT) is a cloud-based service
+used by many different people.
 Each person registers an account that uniquely identifies the user.
 
 The user account is automatically added to a default organization.
@@ -41,4 +42,4 @@ The following tabs are available:
   to which your account is assigned and add other organizations.
 
 .. note:: Every organization has a unique API key.
-   You specify it when installing :ref:`agent`.
+   You specify it when installing :term:`Percona Agent`.

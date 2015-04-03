@@ -9,6 +9,9 @@ Glossary of Terms
     A unique key used by :term:`Percona Agent` to identify the data it collects
     as belonging to the corresponding :term:`organization`.
 
+   Metrics Monitor
+    TBD
+
    organization
     An entity in Percona Cloud Tools that defines all infrustructure components
     and people involved. When you sign up for a :term:`PCT Account`,
@@ -28,6 +31,15 @@ Glossary of Terms
     A service that runs on the server,
     collects data about perfomance and MySQL metrics,
     and sends it to the Percona Cloud.
+
+   Percona Toolkit
+    TBD
+
+   Query Analytics
+    TBD
+
+   System Info
+    TBD
 
    user
     Owner of the :term:`PCT Account`.

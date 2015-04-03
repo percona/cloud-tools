@@ -15,7 +15,7 @@ Percona Agent
       
 
 Percona Agent is a background service that collects MySQL server metrics
-and sends this data to Percona Cloud Tools (PCT) over a secure connection.
+and sends this data to Percona Cloud over a secure connection.
 It uses a unique API key to identify the data for a specific organization.
 
 Percona Agent code is open source, and available on
@@ -46,7 +46,8 @@ System Requirements
 
 .. sidebar:: Percona Toolkit
 
-   Percona Toolkit is required by Percona Agent to provide *System Info*
+   :term:`Percona Toolkit` is required by Percona Agent
+   to provide :term:`System Info`
    with detailed information about the server and MySQL.
    You can find installation instructions in
    `Percona Toolkit Documentation <http://www.percona.com/doc/percona-toolkit>`_

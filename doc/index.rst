@@ -12,12 +12,24 @@ Percona Cloud Tools (PCT) is a cloud-based monitoring service for MySQL servers.
 It provides valuable insight into your database and applications
 that rely on MySQL performance.
 
-Data is collected using a Percona Agent that runs on the server.
-The agent sends information to the cloud,
-where it is processed and made accessible through a web interface
-hosted by Percona.
+Data is collected using Percona Agent,
+which runs on a Linux server as a background service.
+The agent sends MySQL metrics data to Percona Cloud through a secure connection,
+where it is processed and stored.
+You can access and analyse collected performance data using Percona Console,
+which is a web interface accessed from your browser via HTTPS.
 
 (ILLUSTRATION)
+
+::
+
+ -------------- PERCONA CLOUD TOOLS ----------------
+ 
+ Percona Agent <=> Percona Cloud <=> Percona Console
+        |                                   |
+    Linux OS                                | HTTPS
+        |                                   |
+      MySQL                              Browser
 
 Quick Start
 -----------
@@ -25,10 +37,10 @@ Quick Start
 To start using PCT:
 
 1. Go to `cloud.percona.com <https://cloud.percona.com>`_,
-   create a :ref:`account` and log in.
+   create a :term:`PCT Account` and log in.
 #. Get your API key at
-   `cloud.percona.com/api-key <https://cloud.percona.com/api-key>_`.
-#. Install :ref:`agent` by running the following command as root:
+   `cloud.percona.com/api-key <https://cloud.percona.com/api-key>`_.
+#. Install :term:`Percona Agent` by running the following command as root:
 
    ::
 
