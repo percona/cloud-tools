@@ -397,16 +397,20 @@ run the install script with the ``-help`` option.
 .. _create-agent:
 
 **-create-agent**
-  Set to ``false`` if you do not want to create agent???
+  Set to ``false`` if you do not want to create an agent instance
+  in Percona Cloud Tools.
 
   Default: ``-create-agent=true``
 
 .. _create-mysql-instance:
 
 **-create-mysql-instance**
-   Set to ``false`` if you do not want to create a MySQL instance???
+  Set to ``false`` if you do not want to create a MySQL instance
+  in Percona Cloud Tools.
 
-  Default: ``-create-mysql-instance=true`` 
+  Default: ``-create-mysql-instance=true``
+
+  See also: :ref:`-mysql <mysql>`
 
 .. _create-mysql-user:
 
@@ -424,7 +428,8 @@ run the install script with the ``-help`` option.
 .. _create-server-instance:
 
 **-create-server-instance**
-  Set to ``false`` if you do not want to create a server instance???
+  Set to ``false`` if you do not want to create a server instance
+  in Percona Cloud Tools.
 
   Default: ``-create-server-instance=true``
 
@@ -454,7 +459,13 @@ run the install script with the ``-help`` option.
 **-mysql**
   Set to ``false`` if installing Percona Agent on a server without MySQL
   or if you do not want to monitor MySQL metrics and query data.
-  In this case, Percona Agent will monitor only general server metrics.
+  In this case, Percona Agent will monitor only general server metrics
+  and MySQL instance will not be created in Percona Cloud Tools.
+
+  This is the same as setting the following two options:
+
+  * ``-create-mysql-instance=false``
+  * ``-start-mysql-service=false``
 
   Default: ``-mysql=true``
 
@@ -464,7 +475,8 @@ run the install script with the ``-help`` option.
   Specify path to the :file:`my.cnf` file,
   which contains necessary MySQL instance options,
   such as the super user credentials and socket.
-  By default, these options are read from the following files in the given order:
+  By default, these options are read from the following files
+  in the given order:
 
   * :file:`/etc/my.cnf`
   * :file:`/etc/mysql/my.cnf`
@@ -496,7 +508,7 @@ run the install script with the ``-help`` option.
 .. _mysql-socket:
 
 **-mysql-socket**
-  Specify MySQL socket.
+  Specify MySQL socket file.
 
 .. _mysql-user:
 
@@ -506,28 +518,27 @@ run the install script with the ``-help`` option.
 .. _old-passwords:
 
 **-old-passwords**
-  Set to ``true`` ... ???
+  Set to ``true`` if using the original hashing method.
+  It was used in MySQL before version 4.1, and produced a 16-byte string,
+  instead of 41-byte strings produced by version 4.1 and later.
 
   Default: ``-old-passwords=false``
-
-.. _plain-passwords:
-
-**-plain-passwords**
-  Set to ``true`` ... ???
-
-  Default: ``-plain-passwords=false``
 
 .. _start-mysql-services:
 
 **-start-mysql-services**
-  Set to ``false`` ... ???
+  Set to ``false`` if you do not want Percona Agent to monitor any activity
+  related to MySQL.
 
   Default: ``-start-mysql-services=true``
+
+  See also: :ref:`-mysql <mysql>`
 
 .. _start-services:
 
 **-start-services**
-  Set to ``false`` ... ???
+  Set to ``false`` if you do not want Percona Agent to monitor
+  general server performance.
 
   Default: ``-start-services=true``
 

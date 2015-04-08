@@ -49,7 +49,7 @@ To enable *System Info*:
 * :ref:`Install Percona Agent <agent>` (version 1.0.7 or later).
 * `Install Percona Toolkit <http://percona.com/doc/percona-toolkit/2.2/installation.html>`_.
 
-To access the *System Info* report, click the :guilabel:`System Info` link
+To access the *System Info* report, click the **System Info** link
 in any server or MySQL instance box in Percona Console.
 The report is separated into sections that cover various aspects,
 such as processor and memory details for server instances,
