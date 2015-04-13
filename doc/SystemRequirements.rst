@@ -25,7 +25,7 @@ Server monitor
 
 Query Analytics for :ref:`Performance Schema <qa_performance_schema>`
 **********************************************************************
-* *MySQL* 5.6 or newer, any distribution, including *Amazon RDS*
+* *MySQL* 5.6 or newer, any distribution
 * *MySQL* user account with ``SELECT``, ``UPDATE``, ``DELETE`` and ``DROP`` privileges on ``PERFORMANCE_SCHEMA``
 
 Supported Platforms and Versions
@@ -33,4 +33,4 @@ Supported Platforms and Versions
 
 * Any 32-bit (i386) or 64-bit (x86_64) Linux OS
 * *MySQL* 5.1 through 5.6, any distribution
-* *Amazon RDS* (only *MySQL* monitor and :ref:`Query Analytics <query-analytics>` for :ref:`Performance Schema <qa_performance_schema>`)
+* *Amazon RDS* (only *MySQL* monitor)
