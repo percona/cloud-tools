@@ -18,12 +18,12 @@ Server monitor
 * ``/proc`` filesystem
 * Agent running on server
 
-:ref:`Query Analytics <query-analytics>` for Slow Log
+Query Analytics for Slow Log
 *****************************************************
 * Agent and *MySQL* running on the same server
 * *MySQL* user account with ``SUPER``, ``USAGE``, and ``SELECT`` privileges
 
-Query Analytics for :ref:`Performance Schema <qa_performance_schema>`
+Query Analytics for Performance Schema
 **********************************************************************
 * *MySQL* 5.6 or newer, any distribution
 * *MySQL* user account with ``SELECT``, ``UPDATE``, ``DELETE`` and ``DROP`` privileges on ``PERFORMANCE_SCHEMA``
@@ -33,4 +33,4 @@ Supported Platforms and Versions
 
 * Any 32-bit (i386) or 64-bit (x86_64) Linux OS
 * *MySQL* 5.1 through 5.6, any distribution
-* *Amazon RDS* (only *MySQL* monitor)
+* *Amazon RDS* (only MySQL monitor)
