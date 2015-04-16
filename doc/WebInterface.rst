@@ -8,7 +8,10 @@ for monitoring and analyzing collected MySQL performance data.
 You can see your whole infrastructure, manage it, configure,
 and analyze collected data to improve performance.
 
-The top part contains all the main controls,
+Toolbar
+-------
+
+The top part of Percona Console contains various menus in the toolbar,
 while the bottom part is reserved for displaying data.
 
 .. image:: images/PerconaConsole-head.png
@@ -40,13 +43,13 @@ System Info
 
 *System Info* provides information about the status
 and configuration of the server and MySQL instance.
-This report is generate by :term:`Percona Agent`
+The report is generate by :term:`Percona Agent`
 using the :command:`pt-summary` and :command:`pt-mysql-summary` tools
 in :term:`Percona Toolkit`.
 
 To enable *System Info*:
 
-* :ref:`Install Percona Agent <agent>` (version 1.0.7 or later).
+* Install :doc:`Agent` (version 1.0.7 or later).
 * `Install Percona Toolkit <http://percona.com/doc/percona-toolkit/2.2/installation.html>`_.
 
 To access the *System Info* report, click the **System Info** link
@@ -59,9 +62,7 @@ and then paste it into an e-mail without losing the formatting.
 
 For a complete reference of data provided by *System Info*,
 see the documentation for the corresponding tool:
-
-* Server summary: |pt-summary|_
-* MySQL summary: |pt-mysql-summary|_
+|pt-summary|_ and |pt-mysql-summary|_.
 
 .. |pt-summary| replace:: :command:`pt-summary`
 .. _pt-summary: http://percona.com/doc/percona-toolkit/2.2/pt-summary.html

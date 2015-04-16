@@ -1,7 +1,5 @@
 .. highlight:: bash
 
-.. _agent:
-
 Percona Agent
 =============
 
@@ -15,13 +13,16 @@ Percona Agent
       
 
 Percona Agent is a background service that collects MySQL server metrics
-and sends this data to Percona Cloud over a secure connection.
-It uses a unique API key to identify the data for a specific organization.
+and sends this data to :term:`Percona Cloud`
+over a secure websocket connection.
+It uses a unique :term:`API key` to identify the data
+for a specific :term:`organization`.
 
 Percona Agent code is open source, and available on
 `GitHub <https://github.com/percona/percona-agent>`_.
 
-Depending on your needs and preferences, you can install Percona Agent in one of the following ways:
+Depending on your needs and preferences,
+you can install Percona Agent in one of the following ways:
 
 `Quick Install`_
  Install the latest version of Percona Agent
@@ -63,7 +64,7 @@ For MySQL metrics monitoring and query analytics:
 * MySQL 5.6 or later (if using MySQL Performance Schema)
 
 .. note:: For information about the advantages and disadvantages
-   of using Performance Schema, see :ref:`PerfSchema`.
+   of using Performance Schema, see :doc:`PerfSchema`.
 
 The Percona Agent installer uses :command:`mysql --print-defaults`
 to detect local MySQL instance and MySQL superuser credentials.
@@ -119,8 +120,7 @@ Standard Install
 The Percona Agent distribution contains an interactive install script
 that prompts the user for input when it is not able to detect necessary options.
 For example, the script prompts for the
-`API key <https://cloud.percona.com/api-key>`_,
-unless you specify it using the ``-api-key`` option.
+:term:`API key`, unless you specify it using the ``-api-key`` option.
 
 There are many options that you can pass to the
 install script for specific cases.
@@ -328,9 +328,10 @@ at https://cloud.percona.com/instances/mysql.
 Install Script Options
 ----------------------
 
-You can pass command-line options to the Percona Agent install script in special cases.
-For example, the installer may not be able to collect necessary information,
-or you would like the installer to perform non-standard procedures.
+You can pass command-line options to the Percona Agent install script
+in special cases.
+For example, the installer may not be able to detect necessary MySQL options,
+or you may want the installer to perform non-standard procedures.
 
 The general syntax for most options is the name of the option,
 followed by the equals sign and the argument value:
@@ -462,7 +463,7 @@ run the install script with the ``-help`` option.
   In this case, Percona Agent will monitor only general server metrics
   and MySQL instance will not be created in Percona Cloud Tools.
 
-  This is the same as setting the following two options:
+  Setting ``-mysql=false`` is the same as setting the following two options:
 
   * ``-create-mysql-instance=false``
   * ``-start-mysql-service=false``
@@ -545,4 +546,4 @@ run the install script with the ``-help`` option.
 .. _uninstall:
 
 **-uninstall**
-  Instruct the install script to *remove* Percona Agent.
+  Instruct the install script to remove Percona Agent.

@@ -1,19 +1,18 @@
-.. _account:
-
 PCT Account
 ===========
 
 Percona Cloud Tools (PCT) is a cloud-based service
 used by many different people.
-Each person registers an account that uniquely identifies the user.
+Each person registers an :term:`account <PCT Account>`
+that uniquely identifies the :term:`user`.
 
-The user account is automatically added to a default organization.
+The user account is automatically added to a default :term:`organization`.
 You can add other users to your organization or be added to other organizations.
 Users within an organization are assigned various roles,
 based on the required level of access: *Owner*, *Admin*, *Member*, and *Guest*.
 
 Every organization has a unique API key,
-which is used by Percona Agent to identify the data that it collects.
+which is used by :term:`Percona Agent` to identify the data that it collects.
 Only members of the organization can view the data collected by this agent.
 
 Creating PCT Account
@@ -22,7 +21,7 @@ Creating PCT Account
 To create a PCT account:
 
 1. Go to `cloud.percona.com <https://cloud.percona.com>`_
-#. Enter you first name, last name, e-mail, and password.
+#. Enter your first name, last name, e-mail, and password.
 #. Select the check box to agree with the *Terms of Service*
    and *Privacy Policy*.
 #. Click **Sign Up**.

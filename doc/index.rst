@@ -12,24 +12,16 @@ Percona Cloud Tools (PCT) is a cloud-based monitoring service for MySQL servers.
 It provides valuable insight into your database and applications
 that rely on MySQL performance.
 
-Data is collected using Percona Agent,
+Data is collected using :term:`Percona Agent`,
 which runs on a Linux server as a background service.
-The agent sends MySQL metrics data to Percona Cloud through a secure connection,
+The agent sends MySQL metrics data to :term:`Percona Cloud`
+through a secure websocket connection,
 where it is processed and stored.
-You can access and analyse collected performance data using Percona Console,
+You can access and analyse collected performance data
+using :term:`Percona Console`,
 which is a web interface accessed from your browser via HTTPS.
 
-(ILLUSTRATION)
-
-::
-
- -------------- PERCONA CLOUD TOOLS ----------------
- 
- Percona Agent <=> Percona Cloud <=> Percona Console
-        |                                   |
-    Linux OS                                | HTTPS
-        |                                   |
-      MySQL                              Browser
+.. image:: images/pct-diagram.png
 
 Quick Start
 -----------
@@ -51,7 +43,7 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-   :includehidden:
+   :hidden:
 
    Account
    Agent
@@ -63,6 +55,31 @@ Contents
    PerfSchema
    Faq
    glossary
+
+:doc:`Account`
+ How to create and manage your :term:`PCT Account`.
+
+:doc:`Agent`
+ How to install, manage, update, and uninstall :term:`Percona Agent`.
+
+:doc:`WebInterface`
+ Understanding the general layout of :term:`Percona Console`.
+
+:doc:`Performance`
+ How to use the **Performance** module.
+
+:doc:`MetricsMonitor`
+ How to use the :term:`Metrics Monitor` module.
+
+:doc:`QueryAnalytics`
+ How to use the :term:`Query Analytics` module.
+
+:doc:`Configuration`
+ How to configure PCT.
+
+:doc:`PerfSchema`
+ Understanding the advantages and disadvantages of using
+ :term:`Performance Schema` over the :term:`slow query log`.
 
 Help and Support
 ----------------
