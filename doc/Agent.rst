@@ -5,6 +5,7 @@ Percona Agent
 
 .. sidebar:: Release Notes
 
+   * :doc:`release-notes/1.0/1.0.12`
    * :doc:`release-notes/1.0/1.0.11`
    * :doc:`release-notes/1.0/1.0.10`
    * :doc:`release-notes/1.0/1.0.9`
