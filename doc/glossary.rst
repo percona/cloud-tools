@@ -38,17 +38,19 @@ This is a glossary of terms related to Percona Cloud Tools (PCT).
     A service that runs on the server,
     collects data about perfomance and MySQL metrics,
     and sends it to :term:`Percona Cloud`.
-
+..
    Percona Cloud
     Internal infrastructure at the heart of PCT, hosted by Percona.
     In simple terms, it consists of an API server and a database server.
     The API is built to enable both :term:`Percona Agent`
     and :term:`Percona Console` to interact with the database
     of collected metrics.
-
+..
    Percona Console
     Web-based graphical user interface (web GUI)
     that enables users to access data collected by :term:`Percona Agent`.
+
+.. glossary::
 
    Percona Toolkit
     A collection of advanced command-line tools

@@ -1,17 +1,19 @@
 .. _console:
 
-Percona Console
+Web Interface
 ===============
 
-Percona Console is a simple and very powerful web interface
+Percona Cloud Tools provides a simple and very powerful web interface
 for monitoring and analyzing collected MySQL performance data.
 You can see your whole infrastructure, manage it, configure,
 and analyze collected data to improve performance.
 
+The web interface is located at `cloud.percona.com <http://cloud.percona.com`_
+
 Toolbar
 -------
 
-The top part of Percona Console contains various menus in the toolbar,
+The top part of the web UI contains various menus in the toolbar,
 while the bottom part is reserved for displaying data.
 
 .. image:: images/PerconaConsole-head.png

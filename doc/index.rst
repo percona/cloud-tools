@@ -14,12 +14,11 @@ that rely on MySQL performance.
 
 Data is collected using :term:`Percona Agent`,
 which runs on a Linux server as a background service.
-The agent sends MySQL metrics data to :term:`Percona Cloud`
-through a secure websocket connection,
-where it is processed and stored.
+The agent connects to an API server
+hosted by Percona through a secure websocket,
+and stores MySQL metrics and other performance data in a database.
 You can access and analyse collected performance data
-using :term:`Percona Console`,
-which is a web interface accessed from your browser via HTTPS.
+using the web UI accessed from your browser via HTTPS.
 
 .. image:: images/pct-diagram.png
 
@@ -63,7 +62,7 @@ Contents
  How to install, manage, update, and uninstall :term:`Percona Agent`.
 
 :doc:`WebInterface`
- Understanding the general layout of :term:`Percona Console`.
+ Understanding the general layout of the web UI.
 
 :doc:`Performance`
  How to use the **Performance** module.

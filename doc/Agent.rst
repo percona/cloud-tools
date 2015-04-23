@@ -14,9 +14,9 @@ Percona Agent
       
 
 Percona Agent is a background service that collects MySQL server metrics
-and sends this data to :term:`Percona Cloud`
-over a secure websocket connection.
-It uses a unique :term:`API key` to identify the data
+and sends this data over a secure websocket connection to the API
+tha stores it in a database hosted by Percona.
+The agent uses a unique :term:`API key` to identify the data
 for a specific :term:`organization`.
 
 Percona Agent code is open source, and available on
