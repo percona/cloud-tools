@@ -61,11 +61,8 @@ Percona Agent requires the following:
 
 For MySQL metrics monitoring and query analytics:
 
-* MySQL 5.1 or later (if using MySQL slow query log)
-* MySQL 5.6 or later (if using MySQL Performance Schema)
-
-.. note:: For information about the advantages and disadvantages
-   of using Performance Schema, see :doc:`PerfSchema`.
+* MySQL 5.1 or later (if using MySQL :term:`slow query log`)
+* MySQL 5.6 or later (if using MySQL :term:`Performance Schema`)
 
 The Percona Agent installer uses :command:`mysql --print-defaults`
 to detect local MySQL instance and MySQL superuser credentials.

@@ -1,5 +1,3 @@
-.. _metrics:
-
 Metrics Monitor
 ===============
 

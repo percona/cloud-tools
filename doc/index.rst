@@ -31,7 +31,7 @@ To start using PCT:
    create a :term:`PCT Account` and log in.
 #. Get your API key at
    `cloud.percona.com/api-key <https://cloud.percona.com/api-key>`_.
-#. Install :term:`Percona Agent` by running the following command as root:
+#. Install *Percona Agent* by running the following command as root:
 
    ::
 
@@ -56,16 +56,16 @@ Contents
    glossary
 
 :doc:`Account`
- How to create and manage your :term:`PCT Account`.
+ How to create and manage your *PCT Account*.
 
 :doc:`Agent`
- How to install, manage, update, and uninstall :term:`Percona Agent`.
+ How to install, manage, update, and uninstall *Percona Agent*.
 
 :doc:`WebInterface`
  Understanding the general layout of the web UI.
 
 :doc:`Performance`
- How to use the **Performance** module.
+ How to use the *Performance* module.
 
 :doc:`MetricsMonitor`
  How to use the :term:`Metrics Monitor` module.

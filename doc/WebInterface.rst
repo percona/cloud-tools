@@ -1,5 +1,3 @@
-.. _console:
-
 Web Interface
 ===============
 
@@ -8,7 +6,7 @@ for monitoring and analyzing collected MySQL performance data.
 You can see your whole infrastructure, manage it, configure,
 and analyze collected data to improve performance.
 
-The web interface is located at `cloud.percona.com <http://cloud.percona.com`_
+The web interface is located at `cloud.percona.com <http://cloud.percona.com>`_
 
 Toolbar
 -------
@@ -39,6 +37,8 @@ while the bottom part is reserved for displaying data.
    :Admin: This tab contains advanced configuration settings
     available only to users with *Admin* and *Owner* rights
     in the selected :term:`organization`.
+
+.. _sysinfo:
 
 System Info
 -----------
