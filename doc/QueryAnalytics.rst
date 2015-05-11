@@ -1,9 +1,7 @@
-.. _query-analytics:
-
 Query Analytics
 ===============
 
-The **Query Analytics** module enables database administrators
+The **Query Analytics** tool enables database administrators
 and application developers to analyze MySQL queries over periods of time
 and find performance problems.
 Query Analytics helps you optimize database performance
@@ -49,12 +47,12 @@ The following information is available in the Query Profile table:
  If you divide 34.7 million queries by 86.4 thousand seconds,
  you get 401.6 queries per second.
 :Load: Abstract measure of intensity for the query,
- calculated as the total time it took to execute all queries (see *Total*)
+ calculated as the total time it took to execute all queries (see *Total Time*)
  divided by the actual time that passed.
  For example, ``INSERT metric_data`` was executed 34.7 million times
  during the last 24 hours with an average execution time of 38.99 milliseconds
  (see *Avg Time*).
- This adds up to the total time of 1 day and 7 hours (31 hours).
+ This adds up to a total execution time of 1 day and 7 hours (31 hours).
  If you divide 31 hours by 24 hours that actually passed during the period,
  you get a load value of 1.331.
 :Load %: Percentage of the load this query produced
@@ -70,7 +68,7 @@ The following information is available in the Query Profile table:
  This is an important measure of what the majority of users are experiencing.
  If the 95th percentile is low, then it is generally not a problem
  to see high values of maximum execution times (see *Max Time*)
- for only several of the queries.
+ for only several queries.
 :Max Time: Maximum time it took to execute query.
  This may not be a good indicator of query performance,
  because it may have taken a long time to execute only several times
@@ -170,7 +168,7 @@ Alternatively, you can manually copy and paste the query to the server.
 Reviewing Queries
 -----------------
 
-The **Query Analytics** module enables you to review all database activities
+The **Query Analytics** tool enables you to review all database activities
 as you go through the details for various queries.
 When you select a query in the `Query Profile`_ table,
 you can use the buttons in the right part of the `Query Details`_ section

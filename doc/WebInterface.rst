@@ -27,14 +27,14 @@ while the bottom part is reserved for displaying data.
    You can choose one of the predefined options
    (last hour, day, month, three months, year) or select a custom range.
 4. The **Host** menu enables you to select the host that you want to monitor.
-5. The following tabs let you access various modules of Percona Console:
+5. The toolbar contains the following tabs:
 
-   :Performance: This tab contains a dashboard with a status summary
+   :Performance: Access the dashboard with a status summary
     for all hosts in your infrastructure.
-   :Metrics: This tab contains the :term:`Metrics Monitor` module.
-   :Queries: This tab contains the :term:`Query Analytics` module.
-   :Configure: This tab contains all the configuration settings.
-   :Admin: This tab contains advanced configuration settings
+   :Metrics: Access the :term:`Metrics Monitor` tool.
+   :Queries: Access the :term:`Query Analytics` tool.
+   :Configure: Access general PCT settings.
+   :Admin: Access advanced configuration settings
     available only to users with *Admin* and *Owner* rights
     in the selected :term:`organization`.
 

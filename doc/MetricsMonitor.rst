@@ -1,7 +1,7 @@
 Metrics Monitor
 ===============
 
-The **Metrics Monitor** module provides an in-depth overview of metrics
+The **Metrics Monitor** tool provides an in-depth overview of metrics
 that are critical to the server and database.
 Metrics are presented on *charts* to show change over time.
 Charts are contained within a *dashboard*.
@@ -132,7 +132,8 @@ which you can use to customize the appearence of the chart:
 * Toggle between linear and logarithmic scale.
   For example, if the values are too dense, switch to logarithmic scale.
 * Toggle between line and dot chart
-* Edit the chart settings (see `Adding Charts`_)
+* Edit the chart settings
+  (for more information about chart settings, see `Adding Charts`_)
 * Remove chart from dashboard
 
 The following screenshot shows an example of the *MySQL Throughput* metrics

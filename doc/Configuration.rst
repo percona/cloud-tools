@@ -1,7 +1,7 @@
 Configuration
 =============
 
-Percona Cloud Tools provides a number of advanced configuration options.
+Percona Cloud Tools (PCT) provides a number of advanced configuration options.
 To access PCT configuration, open the **Configure** section of the web UI.
 
 The **Configure** section enables you to manage the following:
@@ -16,7 +16,7 @@ Server Configuration
 
 The **Server** tab contains information about all server instances
 known to your PCT infrastructure.
-For each server, you can open the sysinfo_ with detailed report.
+For each server, you can open :ref:`sysinfo` with a detailed report.
 
 To configure how general server metrics are collected,
 click **Server Metrics** for a specific server.
@@ -35,7 +35,7 @@ MySQL Configuration
 
 The **MySQL** tab contains information about all MySQL instances
 known to your PCT infrastructure.
-For each MySQL instance, you can open the sysinfo_ with detailed report.
+For each MySQL instance, you can open the :ref:`sysinfo` with detailed report.
 
 Configuring Metrics Monitor
 ***************************
@@ -70,7 +70,7 @@ Configuring Query Analytics
 
 To configure how query data is collected,
 click **Query Analytics** for a specific MySQL instance.
-Query data is used by the :doc:`QueryAnalytics` module.
+Query data is used by :doc:`QueryAnalytics`.
 
 By default, query data is reported every minute.
 You can change the reporting period if necessary.
@@ -96,7 +96,18 @@ The following settings are available for the slow query log:
 Long query time
  Queries that take more than the specified time in seconds to execute
  are added to the slow query log.
- By default, it is set to 0, meaning that all queries are considered *long*.
+ By default, it is set to 0, meaning that all queries are logged.
+
+ It is not recommended to use this setting for reducing the amount of queries
+ logged on a busy server,
+ because the most load is produced by quick queries executed millions of times.
+ If you only log queries that are longer than most,
+ the workload presented by PCT will greatly differ from the actual.
+
+ Instead, if you want to reduce overhead, use query sampling
+ available in the latest version of Percona Server.
+ Sampling is enabled using the ``log_slow_rate_limit`` parameter,
+ which defines the fraction of queries to log.
 
 Max slow query log size
  When the slow query log reaches the specified size in bytes,
@@ -164,7 +175,7 @@ Installation Information
 The **Install** tab contains information required for installing Percona Agent.
 For instance, you can copy the API key or the full command to install the agent.
 
-For more information, see :doc:`Percona Agent`.
+For more information, see :doc:`Agent`.
 
 Reports Configuration
 ---------------------
