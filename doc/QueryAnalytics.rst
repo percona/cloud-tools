@@ -196,6 +196,45 @@ such as *checkout* or *hotel-search*.
 This will enable you to filter queries by meaningful actions
 performed by your users.
 
+.. _perf-schema:
+
+Performance Schema
+------------------
+
+The default source of query data for Percona Cloud Tools is the slow query log.
+It is available in MySQL 5.1 and later versions.
+Starting from MySQL 5.6 (including Percona Server 5.6 and later),
+you can select to parse query data from the Performance Schema.
+
+Performance Schema is not as data-rich as the slow query log,
+but it has all the critical data and is generally faster.
+In some cases, it may be the only alternative.
+For example, the slow query log is not available for Amazon RDS at all.
+
+To use Performance Schema:
+
+1. Enable it on the server by starting MySQL
+   with the ``performance_schema`` variable set to ``ON``.
+   For example, use the following lines in :file:`my.cnf`:
+
+.. code-block:: none
+
+   [mysql]
+   performance_schema=ON
+
+.. note:: Performance Schema instrumentation is enabled by default
+   on MySQL 5.6.6 and later versions.
+
+2. Configure Query Analytics to collect data from Performance Schema:
+
+   a) In the web UI, select **Configure** > **MySQL**.
+   b) Click **Query Analytics** for the MySQL instance you want.
+   c) Select **Performance Schema** in
+      the **Query Analytics Configuration** dialog box.
+   d) Click **Apply** to save changes.
+
+For more information, see :ref:`conf-qan`.
+
 Other Reading
 -------------
 

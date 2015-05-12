@@ -5,13 +5,13 @@ Percona Agent
 
 .. sidebar:: Release Notes
 
+   * :doc:`release-notes/1.0/1.0.13`
    * :doc:`release-notes/1.0/1.0.12`
    * :doc:`release-notes/1.0/1.0.11`
    * :doc:`release-notes/1.0/1.0.10`
    * :doc:`release-notes/1.0/1.0.9`
    * :doc:`release-notes/1.0/1.0.8`
    * :doc:`release-notes/1.0/1.0.7`
-      
 
 Percona Agent is a background service that collects MySQL server metrics
 and sends this data over a secure websocket connection to the API

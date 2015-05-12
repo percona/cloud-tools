@@ -1,6 +1,0 @@
-.. _PerfSchema:
-
-Performance Schema
-==================
-
-

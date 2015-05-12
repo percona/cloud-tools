@@ -51,7 +51,6 @@ Contents
    MetricsMonitor
    QueryAnalytics
    Configuration
-   PerfSchema
    Faq
    glossary
 
@@ -65,20 +64,16 @@ Contents
  Understanding the general layout of the web UI.
 
 :doc:`Performance`
- How to use the *Performance* module.
+ How to use the *Performance* tool.
 
 :doc:`MetricsMonitor`
- How to use the :term:`Metrics Monitor` module.
+ How to use the :term:`Metrics Monitor` tool.
 
 :doc:`QueryAnalytics`
- How to use the :term:`Query Analytics` module.
+ How to use the :term:`Query Analytics` tool.
 
 :doc:`Configuration`
  How to configure PCT.
-
-:doc:`PerfSchema`
- Understanding the advantages and disadvantages of using
- :term:`Performance Schema` over the :term:`slow query log`.
 
 Help and Support
 ----------------

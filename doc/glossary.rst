@@ -16,8 +16,8 @@ This is a glossary of terms related to Percona Cloud Tools (PCT).
     .. note:: Make sure that the correct organization is selected.
 
    Metrics Monitor
-    A module of PCT for presenting collected MySQL and system metrics
-    on time-based charts.
+    A tool used for presenting collected MySQL and system metrics
+    on time-based charts. See :doc:`MetricsMonitor`.
 
    organization
     An entity in PCT that defines all infrustructure components
@@ -33,11 +33,12 @@ This is a glossary of terms related to Percona Cloud Tools (PCT).
 
    PCT Account
     An user account on `cloud.percona.com <https://cloud.percona.com>`_.
+    See :doc:`Account`.
 
    Percona Agent
     A service that runs on the server,
     collects data about perfomance and MySQL metrics,
-    and sends it to :term:`Percona Cloud`.
+    and sends it to PCT. See :doc:`Agent`.
 ..
    Percona Cloud
     Internal infrastructure at the heart of PCT, hosted by Percona.
@@ -59,18 +60,37 @@ This is a glossary of terms related to Percona Cloud Tools (PCT).
     to generate :term:`System Info` reports.
 
    Performance Schema
-    TBD
+    An alternative source of query data to
+    the :term:`slow query log <Slow query log>`.
+    Performance Schema is available starting from MySQL 5.6,
+    and is enabled by default starting from MySQL 5.6.6.
+    Data is collected from the
+    ``performance_schema.events_statements_summary_by_digest`` table,
+    and is used by the :term:`Query Analytics` tool.
+
+    For more information, see :ref:`perf-schema`.
 
    Query Analytics
-    A module of PCT for analyzing the history of MySQL queries.
+    A tool used for analyzing the history of MySQL queries.
+    Data is collected either using the :term:`slow query log <Slow query log>`
+    or :term:`Performance Schema`.
+
+    For more information, see :doc:`QueryAnalytics`.
 
    Slow query log
-    TBD
+    The default source of query data for :term:`Query Analytics`.
+    Slow query log is available starting from MySQL 5.1,
+    and provides a wealth of valuable data for deep analysis.
+
+    A faster and more efficient way (but without as much data)
+    is the :term:`Performance Schema`.
 
    System Info
-    A module of PCT for viewing the status and configuration
+    A tool for viewing the status and configuration
     of the server and MySQL instances.
     It uses tools from :term:`Percona Toolkit` to generate the report.
+
+    For more information, see :ref:`sysinfo`.
 
    user
     Owner of the :term:`PCT Account`.

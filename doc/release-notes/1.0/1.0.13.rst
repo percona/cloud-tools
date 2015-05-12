@@ -1,0 +1,22 @@
+===================
+Percona Agent 1.0.13
+====================
+
+:Release Date: May 15, 2015
+:Download: http://www.percona.com/downloads/percona-agent/1.0.13
+:Installation: http://cloud-docs.percona.com/Agent.html
+
+New Features
+------------
+
+* The ``diskv`` package was updated to avoid potential goroutine leaks.
+
+Bugs Fixed
+----------
+
+* [PCT-1438] Fixed error when queries could have ``first_seen`` attribute
+  later than ``last_seen`` attribute.
+* [PCT-1619] Fixed crashing of Query Analytics with Performance Schema
+  on null DIGEST.
+* [PCT-1669] Fixed logging of warning messages when a value of a variable
+  cannot be converted.

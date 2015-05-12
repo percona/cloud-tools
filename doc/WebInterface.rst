@@ -71,7 +71,3 @@ see the documentation for the corresponding tool:
 .. |pt-mysql-summary| replace:: :command:`pt-mysql-summary`
 .. _pt-mysql-summary: http://percona.com/doc/percona-toolkit/2.2/pt-mysql-summary.html
 
-Instance Tree
--------------
-
-TBD

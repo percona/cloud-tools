@@ -65,6 +65,8 @@ To change the agent that collects configuration parameters,
 stop the agent service, and use the **Agent** drop-down list.
 You can also change the reporting interval.
 
+.. _conf-qan:
+
 Configuring Query Analytics
 ***************************
 
@@ -78,16 +80,16 @@ You can change the reporting period if necessary.
 There are two methods for collecting data:
 
 * *Slow query log* is the default source of query data.
-* *Performance Schema* is a much faster and efficient alternative
+* *Performance Schema* is a faster and more efficient alternative
   for busy servers.
 
 .. note:: For more information about the advantages and disadvantages
    of Performance Schema over the slow query log,
-   see :doc:`PerfSchema`.
+   see :ref:`perf-schema`.
 
 If you select to use Performance Schema,
 you can run ``TRUNCATE performance_schema.events_statements_summary_by_digest``
-when the Query Analytics module starts.
+when the Query Analytics tool starts.
 This ensures that there is no invalid SQL code left by third-party tools,
 which may not be properly handled by Percona Agent.
 
