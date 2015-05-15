@@ -22,9 +22,9 @@ The Performance dashboard provides the following information:
 :QPS: Average number of queries per second
 :Total time: Total time of all executed queries
 :Load: Query load calculated as a ratio of total execution time
- to the actual time.
+  to the actual time.
 :Response 95%: Response time for the majority of users (that is,
- 95% of users get a response from the server within the specified time)
+  95% of users get a response from the server within the specified time)
 
 To select the reporting period, use the **Time Range** menu
 in the right part of the toolbar.

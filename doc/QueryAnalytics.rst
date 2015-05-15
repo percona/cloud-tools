@@ -112,8 +112,6 @@ However, the columns in the table are the same for all metrics:
  For *Query_time*, it is the maximum execution time for a query,
  for *Rows_sent*, it is the maximum rows in MySQL tables sent by a query,
  and so on.
-:Stddev: The standard deviation for the metric.
- The closer it is to 0, the less dispersed this metric's values are.
 
 Historical data for metric
 **************************
@@ -217,13 +215,13 @@ To use Performance Schema:
    with the ``performance_schema`` variable set to ``ON``.
    For example, use the following lines in :file:`my.cnf`:
 
-.. code-block:: none
+   .. code-block:: none
 
-   [mysql]
-   performance_schema=ON
+      [mysql]
+      performance_schema=ON
 
-.. note:: Performance Schema instrumentation is enabled by default
-   on MySQL 5.6.6 and later versions.
+   .. note:: Performance Schema instrumentation is enabled by default
+      on MySQL 5.6.6 and later versions.
 
 2. Configure Query Analytics to collect data from Performance Schema:
 
@@ -238,6 +236,6 @@ For more information, see :ref:`conf-qan`.
 Other Reading
 -------------
 
- * `MySQL performance optimization: Don’t guess! Measure with Percona Cloud Tools <http://www.percona.com/blog/2014/01/29/mysql-performance-optimization-dont-guess-measure-with-percona-cloud-tools/>`_
- * `Measure the impact of MySQL configuration changes with Percona Cloud Tools <http://www.percona.com/blog/2014/06/11/measure-impact-mysql-configuration-changes-percona-cloud-tools/>`_
- * `PERFORMANCE_SCHEMA vs Slow Query Log <http://www.percona.com/blog/2014/02/11/performance_schema-vs-slow-query-log/>`_
+* `MySQL performance optimization: Don’t guess! Measure with Percona Cloud Tools <http://www.percona.com/blog/2014/01/29/mysql-performance-optimization-dont-guess-measure-with-percona-cloud-tools/>`_
+* `Measure the impact of MySQL configuration changes with Percona Cloud Tools <http://www.percona.com/blog/2014/06/11/measure-impact-mysql-configuration-changes-percona-cloud-tools/>`_
+* `PERFORMANCE_SCHEMA vs Slow Query Log <http://www.percona.com/blog/2014/02/11/performance_schema-vs-slow-query-log/>`_

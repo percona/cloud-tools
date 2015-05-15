@@ -42,7 +42,7 @@ Configuring Metrics Monitor
 
 To configure how MySQL metrics are collected,
 click **MySQL Metrics** for a specific MySQL instance.
-MySQL metrics are used to populate charts for :doc:`MetricsMonitor`.
+MySQL metrics are used to populate charts for :term:`Metrics Monitor`.
 
 To change the agent that collects MySQL metrics,
 stop the agent service, and use the **Agent** drop-down list.
@@ -72,15 +72,15 @@ Configuring Query Analytics
 
 To configure how query data is collected,
 click **Query Analytics** for a specific MySQL instance.
-Query data is used by :doc:`QueryAnalytics`.
+Query data is used by :term:`Query Analytics`.
 
 By default, query data is reported every minute.
 You can change the reporting period if necessary.
 
 There are two methods for collecting data:
 
-* *Slow query log* is the default source of query data.
-* *Performance Schema* is a faster and more efficient alternative
+* :term:`Slow query log <slow query log>` is the default source of query data.
+* :term:`Performance Schema` is a faster and more efficient alternative
   for busy servers.
 
 .. note:: For more information about the advantages and disadvantages
