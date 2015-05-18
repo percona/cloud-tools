@@ -153,6 +153,8 @@ The **Log slow rate limit** field defines the fraction of queries to log.
 By default, the limit is set to 20,
 meaning that only 5% of queries should be logged (every 20th query).
 
+.. _agent-config::
+
 Agent Configuration
 -------------------
 The **Agent** tab contains information about all Percona Agents
@@ -170,6 +172,10 @@ To expand agent details, click the **info** link.
 Details contain status parameters,
 which are regularly collected and refreshed.
 The status of the agent is a wealth of important debugging information.
+
+The **Logs** tab contain messages logged by the Percona Agent.
+It is automatically refreshed and regularly updated with latest messages.
+You select the types of messages to filter the list.
 
 Installation Information
 ************************

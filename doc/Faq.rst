@@ -47,8 +47,17 @@ this data is limited to the following:
 What does ``write unix /var/lib/mysql/mysql.sock: broken pipe`` message mean?
 -----------------------------------------------------------------------------
 
-If you see messages like this in :file:`percona-agent.log`,
-it indicates a connection issue,
+Messages in :file:`percona-agent.log` are not necessarily from Percona Agent.
+This file is used to capture many various messages.
+
+You should refer to the agent log in the web UI
+for specific Percona Agent errors.
+To view the agent log, open **Configure** > **Agent**,
+and click **info** for the agent you want to troubleshoot.
+For more information, see :ref:`agent-config`.
+
+This particular message is from the Go MySQL driver.
+It indicates a connection issue,
 and possibly a problem with credentials for the *percona-agent* user
 to access MySQL.
 
