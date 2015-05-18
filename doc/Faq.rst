@@ -6,6 +6,7 @@ Frequently Asked Questions
 .. contents::
    :local:
 
+
 How to install Percona Agent on Amazon RDS?
 -------------------------------------------
 
@@ -28,8 +29,8 @@ Percona Agent communicates using the :abbr:`URI (uniform resource locator)`
 specified by the ``link`` entry in
 :file:`/usr/local/percona/percona-agent/config/agent.conf`.
 
-Why does Percona Agent fill up disk disk space?
------------------------------------------------
+Why does Percona Agent fill up disk space?
+------------------------------------------
 
 Percona Agent saves collected data to the
 :file:`/usr/local/percona/percona-agent/data` folder before sending it to PCT.
@@ -39,12 +40,14 @@ the agent stores this data until it manages to send it.
 What does ``write unix /var/lib/mysql/mysql.sock: broken pipe`` message mean?
 -----------------------------------------------------------------------------
 
-If you see messages like this in the agent log,
+If you see messages like this in :file:`percona-agent.log`,
 it indicates a connection issue,
 and possibly a problem with credentials for the *percona-agent* user
 to access MySQL.
 
-Try to restart the agent by running the following command::
+First of all, make sure that there is a *percona-agent* user
+set up for the MySQL instance.
+If it is, try to restart the agent by running the following command::
 
 $ service percona-agent restart
 
@@ -57,10 +60,6 @@ $ /etc/init.d/percona-agent restart
 How to install Percona Agent on a server with old password authentication?
 --------------------------------------------------------------------------
 
-Before MySQL version 4.1, the original hashing method produced a 16-byte string.
-In MySQL 4.1 and later versions, passwords are stored as 41-byte strings.
-
-By default, the agent installer assumes the new hashing method.
 If you need to install Percona Agent on a server
 with old password authentication, specify the ``-old-passwords=true`` option.
 

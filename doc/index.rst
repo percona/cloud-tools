@@ -8,9 +8,23 @@
 Welcome to Percona Cloud Tools Documentation!
 =============================================
 
+.. sidebar:: Beta
+
+  |PCT| is currently in beta. The following limitations apply:
+
+  * 3 organizations per user
+  * 5 agents per organization
+  * 8 days of data per agent
+
 |PCT| is a cloud-based monitoring service for MySQL servers.
 It provides valuable insight into your database and applications
 that rely on MySQL performance.
+
+.. contents::
+  :local:
+
+Overview
+--------
 
 Data is collected using a :term:`Percona Agent`,
 which runs on a Linux server as a background service.
@@ -37,12 +51,6 @@ To start using |PCT|:
    ::
 
    $ curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key="<API key>"
-
-.. note:: The following limitations apply for |PCT| beta:
-
-  * Maximum 3 organizations per user
-  * Maximum 5 agents per organization
-  * Maximum 8 days of data per agent
 
 Contents
 --------
