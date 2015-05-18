@@ -1,0 +1,27 @@
+====================
+Percona Agent 1.0.13
+====================
+
+:Release Date: May 15, 2015
+:Download: http://www.percona.com/downloads/percona-agent/1.0.13
+:Installation: http://cloud-docs.percona.com/Agent.html
+
+Bugs fixed
+----------
+
+* Resolved an issue when queries had ``first_seen`` attribute
+  later than ``last_seen`` attribute.
+* Fixed crashing of Query Analytics with Performance Schema on null DIGEST.
+* Removed warnings like ``strconv.ParseFloat: parsing "ON": invalid syntax``
+  from the Percona Agent log.
+
+  Starting from MySQL 5.6 and later versions, ``SHOW GLOBAL STATUS``
+  does not contain only number variables.
+  This caused Percona Agent to flood the log with warning messages
+  when a value of a variable could not be converted.
+
+Other improvements
+------------------
+
+* The ``diskv`` package was updated to avoid potential goroutine leaks.
+

@@ -3,35 +3,50 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. highlight:: bash
+.. |PCT| replace:: :abbr:`PCT (Percona Cloud Tools)`
 
 Welcome to Percona Cloud Tools Documentation!
 =============================================
 
-Percona Cloud Tools (PCT) is a cloud-based monitoring service for MySQL servers.
+.. sidebar:: Beta
+
+  |PCT| is currently in beta. The following limitations apply:
+
+  * 3 organizations per user
+  * 5 agents per organization
+  * 8 days of data per agent
+
+|PCT| is a cloud-based monitoring service for MySQL servers.
 It provides valuable insight into your database and applications
 that rely on MySQL performance.
 
-Data is collected using :term:`Percona Agent`,
+.. contents::
+  :local:
+
+Overview
+--------
+
+Data is collected using a :term:`Percona Agent`,
 which runs on a Linux server as a background service.
 The agent connects to an API server
 hosted by Percona through a secure websocket,
 and stores MySQL metrics and other performance data in a database.
 You can access and analyse collected performance data
-using the web UI accessed from your browser via HTTPS.
+using the web interface accessed from your browser via
+:abbr:`HTTPS (Hypertext Transfer Protocol Secure)`.
 
 .. image:: images/pct-diagram.png
 
 Quick Start
 -----------
 
-To start using PCT:
+To start using |PCT|:
 
 1. Go to `cloud.percona.com <https://cloud.percona.com>`_,
    create a :term:`PCT Account` and log in.
-#. Get your API key at
+#. Get your :term:`API key` at
    `cloud.percona.com/api-key <https://cloud.percona.com/api-key>`_.
-#. Install :term:`Percona Agent` by running the following command as root:
+#. Install *Percona Agent* by running the following command as root:
 
    ::
 
@@ -51,34 +66,29 @@ Contents
    MetricsMonitor
    QueryAnalytics
    Configuration
-   PerfSchema
    Faq
    glossary
 
 :doc:`Account`
- How to create and manage your :term:`PCT Account`.
+ How to create and manage your *PCT Account*.
 
 :doc:`Agent`
- How to install, manage, update, and uninstall :term:`Percona Agent`.
+ How to install, manage, update, and uninstall *Percona Agent*.
 
 :doc:`WebInterface`
  Understanding the general layout of the web UI.
 
 :doc:`Performance`
- How to use the **Performance** module.
+ How to get a quick overview of your infrastructure.
 
 :doc:`MetricsMonitor`
- How to use the :term:`Metrics Monitor` module.
+ How to use the *Metrics Monitor* tool.
 
 :doc:`QueryAnalytics`
- How to use the :term:`Query Analytics` module.
+ How to use the *Query Analytics* tool.
 
 :doc:`Configuration`
- How to configure PCT.
-
-:doc:`PerfSchema`
- Understanding the advantages and disadvantages of using
- :term:`Performance Schema` over the :term:`slow query log`.
+ How to configure |PCT|.
 
 Help and Support
 ----------------
@@ -89,4 +99,4 @@ Help and Support
 * For bugs, please create an issue at https://jira.percona.com.
 
 * For everything else, please ask, share, and help others on the
-  `Percona Cloud Tools Community Forum <http://www.percona.com/forums/questions-discussions/percona-cloud-tools>`_.
+  `Percona Cloud Tools Community Forum <http://wwcw.percona.com/forums/questions-discussions/percona-cloud-tools>`_.

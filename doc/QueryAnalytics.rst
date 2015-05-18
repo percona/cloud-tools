@@ -1,124 +1,241 @@
-.. _query-analytics:
-
 Query Analytics
-###############
+===============
 
-About
-*****
-
-**Query Analytics** enables DBAs and application developers to analyze MySQL queries over long periods of time and shines a spotlight on problems. Query Analytics helps you:
-
- * Be sure your queries (tasks) are performed as expected
- * Queries are executed within the time frame you need
- * If not, then you will be able to see which query (or several) are problematic and requires attention
- * Get detailed metrics for each query
+The **Query Analytics** tool enables database administrators
+and application developers to analyze MySQL queries over periods of time
+and find performance problems.
+Query Analytics helps you optimize database performance
+by making sure that queries are executed as expected
+and within the shortest time possible.
+In case of problems, you can see which queries may be the cause
+and get detailed metrics for them.
 
 Query Profile
-*************
+-------------
 
-Query profile provides the general information about the queries executed on the server. Query profile will show you which queries takes the most time in the database, and information on how many queries execute, total time they took, average time per query and 95% response time.
+The **Query Profile** section provides a list of queries
+executed on the server in the specified period of time.
+It also shows valuable performance information about each query.
 
-Following information is available in the Query Profile:
+The following screenshot shows an example of the Query Profile table:
 
- * Rank - The query's rank within the entire set of queries analyzed
- * Query - The distilled query. This is the abstracted form of a query, which makes it possible to group similar queries together. Abstracting a query removes literal values, normalizes whitespace, etc. 
- * Query ID - The query's unique ID
- * Queries - The number of times this query was executed
- * QPS - The number of queries per second that the server was executing
- * Load - The wall clock time (in seconds) server spent running the query in given time range.
- * Load % - Percentage of the wall clock time the server was running the query
- * Total Time - The total time of all executed queries (for server), or total time of fingerprinted query (for specific query). Queries with the biggest Total time value are causing most of the server load.
- * Avg Time - The average time of query execution
- * 95% - The 95th percentile; 95% of the values are less than or equal to this value. Shows user experience in most of the cases.
- * Max Time -  The longest period of time for query to be executed. Shows the worst user experience.
+.. image:: images/query-profile.png
 
-You can sort these queries by load they were causing on server (SUM) or by the amount of time it took to server to run them (MAX).
+By default, the table lists ten queries with the highest load.
+Use the **Sort by** field in the toolbar to change how queries are sorted:
 
-.. image:: images/sum_max.png
+.. figure:: images/sum_max.png
 
-You can filter this information for the time period by selecting the predefined time periods or by creating your own by selecting the calendar icon. 
+:SUM: Sort queries by load (this is the default)
+:MAX: Sort queries by maximum time they took to execute
 
-.. image:: images/selector.png
+A box below the table shows the number of queries listed
+and the percentage of them compared to all queries.
+To show ten more queries in the table, click the button with the plus sign.
 
-Queries can also be filtered by :ref:`query_tags` and :ref:`query_status`.
+The following information is available in the Query Profile table:
 
-When you click on any of the queries in the list you'll  get more details in the Query Details section. Query details provide the additional information:
+:Rank: Determined by the calculated load (see *Load*).
+:Query: Abstracted form of a query, where literal values are removed,
+ whitespace normalized, etc.
+ Similar queries are grouped together under the same name.
+:Query ID: Unique identifier of the query.
+:Queries: Number of times this query was executed during the selected period.
+:QPS: Average number of queries per second for the selected period.
+ For example, ``INSERT metric_data`` was executed 34.7 million times
+ during the last 24 hours (the previous example shows a one day period).
+ If you divide 34.7 million queries by 86.4 thousand seconds,
+ you get 401.6 queries per second.
+:Load: Abstract measure of intensity for the query,
+ calculated as the total time it took to execute all queries (see *Total Time*)
+ divided by the actual time that passed.
+ For example, ``INSERT metric_data`` was executed 34.7 million times
+ during the last 24 hours with an average execution time of 38.99 milliseconds
+ (see *Avg Time*).
+ This adds up to a total execution time of 1 day and 7 hours (31 hours).
+ If you divide 31 hours by 24 hours that actually passed during the period,
+ you get a load value of 1.331.
+:Load %: Percentage of the load this query produced
+ compared to the total load of all queries.
+ For example, ``INSERT metric_data`` has a load value of 1.331,
+ which is 20.52% out of the total 6.484 load for all queries combined.
+:Total Time: Total time it took to execute all queries.
+ Queries with the biggest total time are causing the most load.
+:Avg Time: Average time it took to execute one query,
+ calculated as the total time divided by total number of queries.
+:95%: The 95th percentile is the maximum time it took to execute 95% of queries.
+ Only 5% of queries took more time to execute.
+ This is an important measure of what the majority of users are experiencing.
+ If the 95th percentile is low, then it is generally not a problem
+ to see high values of maximum execution times (see *Max Time*)
+ for only several queries.
+:Max Time: Maximum time it took to execute query.
+ This may not be a good indicator of query performance,
+ because it may have taken a long time to execute only several times
+ out of millions during a specific period.
+ You should use this value in combination with 95th percentile (see *95%*).
 
-* Query Metrics - This section provides the detailed query metrics for the selected query. Some of the provided metrics are: Query count, Query_time, Lock_time, Rows_sent, Rows_examined, Rows_affected, and Bytes_sent. 
+Server Summary
+--------------
 
-.. image:: images/query_metrics.png
+The **Server Summary** section provides a list of metrics
+for queries currently displayed in the `Query Profile`_ table.
+Some of these metrics are *Query count*, *Query_time*, *Lock_time*, *Rows_sent*,
+and so on.
 
-For each of the metrics Query Analytics provide the historic data. Each of the metrics can be sorted by: Percent, Total, Average, Minimum, Median, 95%, Maximum, and Standard Deviation to provide the additional and historic information:
+The following screenshot shows an example of the Server Summary table:
 
-.. image:: images/query_metrics_historic.png
+.. image:: images/server-summary.png
 
-* Query Plan - This section shows information about the query plan for the selected query. Information available is: Filesort, Filesort on disk, Full join, Full scan, Query cache hits, Temporary tables, Temporary tables on disk:
+The values depend on the units used by the specific metric.
+However, the columns in the table are the same for all metrics:
 
-.. image:: images/query_plan.png
+:Total: The count of whatever units are used by the metric.
+ For *Query_time*, it is the total execution time of queries,
+ for *Rows_sent*, it is the total rows in MySQL tables that were sent,
+ and so on.
+:Average: The average of whatever units are used by the metric.
+ For *Query_time*, it is the average execution time per query,
+ for *Rows_sent*, it is the average rows in MySQL tables sent per query,
+ and so on.
+:Minimum: The minimum of whatever units are used by the metric.
+ For *Query_time*, it is the minimum execution time for a query,
+ for *Rows_sent*, it is the minimum rows in MySQL tables sent by a query,
+ and so on.
+:95%: The 95th percentile of whatever units are used by the metric.
+ It represents the maximum value for 95% of queries
+ (it is lower for the remaining 5%).
+ For *Query_time*, it is the maximum execution time for 95% of queries,
+ for *Rows_sent*, it is the maximum amount of rows sent by 95% of queries,
+ and so on.
+:Maximum: The maximum of whatever units are used by the metric.
+ For *Query_time*, it is the maximum execution time for a query,
+ for *Rows_sent*, it is the maximum rows in MySQL tables sent by a query,
+ and so on.
 
-* Query Example - This section provides the real example of the selected query. 
- 
-.. image:: images/query_example.png
+Historical data for metric
+**************************
 
-With **Query Analytics** you can run the `EXPLAIN` command just by clicking the ``Run EXPLAIN`` from the **Percona Cloud Tools** without copy/pasting it to the server. **NOTE:** For server versions prior to 5.6, only ``EXPLAIN`` for ``SELECT`` is available due to server implementations. Running ``EXPLAIN`` for ``UPGRADE``/``INSERT``/``DELETE`` is available for MySQL and Percona Server 5.6 or newer, but you'll need to add the additional grants to the ``percona-agent`` user. 
+To see historical data for a metric, expand the metric.
+This opens a time graph with the *Total* values plotted above *Average QPS*.
+The following screenshot shows an example of the time graph
+for the *Query_time* metric:
 
-.. _query_status:
+.. image:: images/metric-time-graph.png
 
-Query Review
-============
+The previous example contains data for the last day in 10-minute periods.
+The time span and granularity depend on the **Time range** setting
+(for more information, see :doc:`WebInterface`).
 
-Query Review gives you the right resources to efficiently review your application's most important database activities. This enable you to assess, categorize, and comment on each of your application's queries.
-New, Reviewed, Needs Attention
+The *Total* graph shows the total time it took to execute queries
+for each 10-minute chunk.
+You can compare this to the global average queries per second.
+For example, in the previous screenshot,
+you can see how spikes in total execution time
+correspond to small drops in *Average QPS*.
 
-When you review your application's queries, Percona Cloud Tools will keep track of queries that have been evaluated. All queries can be marked as ``New``, ``Reviewed``, or ``Needs attention``. All the queries are marked as ``New`` by default. These three phrases will save you significant time and can help you more efficiently perform query analysis as a team. New filters in Percona Cloud Tools also allow you to quickly assess the performance of new queries introduced in your latest code deployment.
+Query Details
+-------------
 
-.. image:: images/query_review.png
+The **Query Details** section opens in place of the `Server Summary`_ section
+when you select a specific query in the `Query Profile`_ table.
+This way you can drill down into data related to a particular query.
 
-.. _query_tags:
+In addition to the query name and checksum (unique identifier),
+the **Query Details** section provides the time and date
+when the query was first and last seen.
+It also contains a *Metrics* table similar to the `Server Summary`_,
+as well as a *Query Plan* for the selected query.
 
-Query Tags
-==========
+At the bottom of the **Query Details** section,
+you can see an example of the selected query.
+For information about how MySQL executes the query,
+run ``EXPLAIN`` on the query.
+There is a link you can click to run ``EXPLAIN`` for the selected query
+directly from within PCT, and get a response.
+Alternatively, you can manually copy and paste the query to the server.
 
-Query tags are a flexible way to allow your team to use your own language to categorize queries. There are many ways to use tags. One approach we recommend is to record which queries belong to different sub-systems of your application such as ``checkout`` or ``hotel-search``. This should help to connect the experiences of your application's users to the underlying queries.
+.. note:: If you are using Percona Server 5.5 or earlier version,
+   ``EXPLAIN`` is available only for ``SELECT`` queries
+   due to server implementation.
+   In case of Percona Server 5.6 and later versions,
+   you can run ``EXPLAIN`` for ``UPGRADE``, ``INSERT``, and ``DELETE``
+   queries if you add necessary additional permissions
+   to the Percona Agent user.
 
-.. image:: images/tags.png
+Reviewing Queries
+-----------------
 
-Comments
-========
+The **Query Analytics** tool enables you to review all database activities
+as you go through the details for various queries.
+When you select a query in the `Query Profile`_ table,
+you can use the buttons in the right part of the `Query Details`_ section
+to set the status for the query and categorize it using tags.
+You can then filter queries according to the assigned status and tags.
 
-Comments enable you and your team to better collaborate on improving the performance of your application as a team. Anyone that is a part of your organization can read and create query comments.
- 
-Configuring Query Analytics
-***************************
+At the bottom, you can add a comment for the query.
+This metadata is visible by all users in your organization,
+which enables flexible collaboration for reviewing and tuning query performance.
 
-Query analytics use the MySQL slow query log to gather the data. Although the default values should be good for most of the users, you can configure the analytics to provide additional data or change the data source from slow query log to Performance Schema.
+As you review queries, change the status accordingly:
 
-In order to configure the Query Analytics you need to go to "Configure" tab, select "MySQL" and find your server in the list. 
+:Not reviewed: This is the default status.
+:Reviewed: Select this status after you review a query
+ and there are no problems with it.
+:Needs attention: Select this status if a query requires deeper analysis
+ or some other action associated with it.
 
-.. image:: images/qa_agent_config.png
+Query tags are a flexible way for your team to categorize queries.
+You can create your own set of tags,
+which corresponds to your procedures and environment.
+For example, one approach is to tag queries
+according to the different subsystems of your application,
+such as *checkout* or *hotel-search*.
+This will enable you to filter queries by meaningful actions
+performed by your users.
 
-You click on Query Analytics:
+.. _perf-schema:
 
-.. image:: images/qa_config.png
+Performance Schema
+------------------
 
-Here you can change the values of Long query time, maximum size of the slow query log, removing the old slow query logs and will the agent send and store the real queries or will the query fingerprints be used instead.
+The default source of query data for Percona Cloud Tools is the slow query log.
+It is available in MySQL 5.1 and later versions.
+Starting from MySQL 5.6 (including Percona Server 5.6 and later),
+you can select to parse query data from the Performance Schema.
 
-.. image:: images/qa_config_slowlog.png
+Performance Schema is not as data-rich as the slow query log,
+but it has all the critical data and is generally faster.
+In some cases, it may be the only alternative.
+For example, the slow query log is not available for Amazon RDS at all.
 
-.. _qa_performance_schema:
+To use Performance Schema:
 
-Using Performance Schema 
-========================
+1. Enable it on the server by starting MySQL
+   with the ``performance_schema`` variable set to ``ON``.
+   For example, use the following lines in :file:`my.cnf`:
 
-The MySQL slow log is a wealth of indispensable data about queries that you cannot get anywhere else. That's why it's the default for Percona Cloud Tools Query Analytics. Like most things, however, it has tradeoffs: for one, it can be time-consuming to parse, especially on very busy servers. Or, in the case of Amazon RDS, the slow log may simply not be available. With MySQL 5.6 or newer (including Percona Server 5.6 or newer) you can parse queries from the Performance Schema. It's not as data-rich as the slow log, but it has the basics and it's a great alternative (and sometimes the only alternative) to the slow log.
+   .. code-block:: none
 
-To use the Performance Schema you'll need to enable it on the server first (by setting the ``performance_scema`` variable to ``ON``) and configure the Query Analytics to use it instead of slow log for collecting the data.
+      [mysql]
+      performance_schema=ON
 
-.. image:: images/qa_config_ps.png
+   .. note:: Performance Schema instrumentation is enabled by default
+      on MySQL 5.6.6 and later versions.
+
+2. Configure Query Analytics to collect data from Performance Schema:
+
+   a) In the web UI, select **Configure** > **MySQL**.
+   b) Click **Query Analytics** for the MySQL instance you want.
+   c) Select **Performance Schema** in
+      the **Query Analytics Configuration** dialog box.
+   d) Click **Apply** to save changes.
+
+For more information, see :ref:`conf-qan`.
 
 Other Reading
-*************
+-------------
 
- * `MySQL performance optimization: Don’t guess! Measure with Percona Cloud Tools <http://www.percona.com/blog/2014/01/29/mysql-performance-optimization-dont-guess-measure-with-percona-cloud-tools/>`_
- * `Measure the impact of MySQL configuration changes with Percona Cloud Tools <http://www.percona.com/blog/2014/06/11/measure-impact-mysql-configuration-changes-percona-cloud-tools/>`_
- * `PERFORMANCE_SCHEMA vs Slow Query Log <http://www.percona.com/blog/2014/02/11/performance_schema-vs-slow-query-log/>`_
+* `MySQL performance optimization: Don’t guess! Measure with Percona Cloud Tools <http://www.percona.com/blog/2014/01/29/mysql-performance-optimization-dont-guess-measure-with-percona-cloud-tools/>`_
+* `Measure the impact of MySQL configuration changes with Percona Cloud Tools <http://www.percona.com/blog/2014/06/11/measure-impact-mysql-configuration-changes-percona-cloud-tools/>`_
+* `PERFORMANCE_SCHEMA vs Slow Query Log <http://www.percona.com/blog/2014/02/11/performance_schema-vs-slow-query-log/>`_

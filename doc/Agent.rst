@@ -5,17 +5,18 @@ Percona Agent
 
 .. sidebar:: Release Notes
 
+   * :doc:`release-notes/1.0/1.0.13`
    * :doc:`release-notes/1.0/1.0.12`
    * :doc:`release-notes/1.0/1.0.11`
    * :doc:`release-notes/1.0/1.0.10`
    * :doc:`release-notes/1.0/1.0.9`
    * :doc:`release-notes/1.0/1.0.8`
    * :doc:`release-notes/1.0/1.0.7`
-      
 
-Percona Agent is a background service that collects MySQL server metrics
-and sends this data over a secure websocket connection to the API
-tha stores it in a database hosted by Percona.
+*Percona Agent* is a background service that collects MySQL server metrics
+and sends this data over a secure websocket connection to the
+:abbr:`API (application programming interface)`
+that stores it in a database hosted by Percona.
 The agent uses a unique :term:`API key` to identify the data
 for a specific :term:`organization`.
 
@@ -61,11 +62,12 @@ Percona Agent requires the following:
 
 For MySQL metrics monitoring and query analytics:
 
-* MySQL 5.1 or later (if using MySQL slow query log)
-* MySQL 5.6 or later (if using MySQL Performance Schema)
+* MySQL 5.1 or later (if using MySQL :term:`slow query log`)
+* MySQL 5.6 or later (if using MySQL :term:`Performance Schema`)
 
-.. note:: For information about the advantages and disadvantages
-   of using Performance Schema, see :doc:`PerfSchema`.
+.. note:: For more information about the advantages and
+  disadvantages of Performance Schema over slow query log,
+  see :ref:`perf-schema`.
 
 The Percona Agent installer uses :command:`mysql --print-defaults`
 to detect local MySQL instance and MySQL superuser credentials.
@@ -90,7 +92,7 @@ with the following privileges:
 Quick Install
 -------------
 
-1. Get the API key at https://cloud.percona.com/api-key.
+1. Get the *API key* at https://cloud.percona.com/api-key.
 #. Run the following command as root:
 
    ::
@@ -121,7 +123,7 @@ Standard Install
 The Percona Agent distribution contains an interactive install script
 that prompts the user for input when it is not able to detect necessary options.
 For example, the script prompts for the
-:term:`API key`, unless you specify it using the ``-api-key`` option.
+*API key*, unless you specify it using the ``-api-key`` option.
 
 There are many options that you can pass to the
 install script for specific cases.
@@ -134,7 +136,6 @@ Some of them are discussed in the following sections:
 For a complete list of options,
 run the install script with the ``-help`` option
 or see the `Install Script Options`_ reference section.
-
 
 Automated Install
 ^^^^^^^^^^^^^^^^^
@@ -255,7 +256,7 @@ Managing Percona Agent
 ----------------------
 
 After installation,
-Percona Agent is started and runs in the background as a service.
+Percona Agent is started and run in the background as a service.
 You can control the :command:`percona-agent` service as follows::
 
 $ sudo /etc/init.d/percona-agent {start|stop|restart|status}
