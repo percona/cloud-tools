@@ -6,6 +6,17 @@ Percona Agent 1.0.13
 :Download: http://www.percona.com/downloads/percona-agent/1.0.13
 :Installation: http://cloud-docs.percona.com/Agent.html
 
+New Features
+------------
+
+* Limited the size of the data spool
+  (:file:`/usr/local/percona/percona-agent/data`)
+  to 1 hour, 10 MiB, and 100 files.
+  Previously, when Percona Agent worked offline for some time
+  (for example, because of connection issues)
+  this data either filled up disk space indefinitely,
+  or caused a network burst after it came back online.
+
 Bugs fixed
 ----------
 

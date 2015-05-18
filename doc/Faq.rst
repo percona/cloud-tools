@@ -37,6 +37,13 @@ Percona Agent saves collected data to the
 If there is a connection issue and it fails to send data,
 the agent stores this data until it manages to send it.
 
+Starting from Percona Agent version 1.0.13,
+this data is limited to the following:
+
+* 1 hour
+* 10 MiB
+* 100 files
+
 What does ``write unix /var/lib/mysql/mysql.sock: broken pipe`` message mean?
 -----------------------------------------------------------------------------
 
