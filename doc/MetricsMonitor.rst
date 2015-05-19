@@ -12,6 +12,8 @@ and set up separate dashboards for different members in your team.
 Use the **Dashboard** drop-down list to select an existing dashboard,
 create a new dashboard, or remove a dashboard.
 
+.. image:: images/mm-dashboard-menu.png
+
 .. note::
    * Use the **Time Range** menu to select the period of time,
      for which you would like to view metrics.
@@ -25,6 +27,7 @@ Although a chart can contain any number of metrics,
 do not overload it, unless you need to compare several metrics.
 Keep it simple and separate different types of metrics across charts.
 
+.. image:: images/mm-addchart-button.png
 
 To add a chart to a dashboard:
 
@@ -61,6 +64,8 @@ Available grouping depends on the current time range.
 For example, if you are viewing data during last week
 you can select to group data points by 5 minutes, 1 hour, or 6 hours.
 
+.. image:: images/mm-group-menu.png
+
 This is useful for some metrics with high volatility.
 If frequent spikes are not as important as the overall trend,
 select a larger group to smooth out the chart.
@@ -80,6 +85,8 @@ that occurred only during the period of interest.
 Sometimes, you may not want to synchronize all charts when zooming.
 To disable synchronization, click the **Sync** button in the **Zoom** field.
 
+.. image:: images/mm-zoom-menu.png
+
 .. note:: If you already zoomed in to a chart,
    you will not be able to disable synchronization until you reset the zoom.
    You have to click the **Reset** button, which appears in the **Zoom** field,
@@ -92,6 +99,8 @@ click the **Metrics Configuration** button in the far right corner
 and clear the **Enable Zoom's time range globally** check box.
 In this case, the global time range will remain when you open another dashboard.
 
+.. image:: images/mm-config-menu.png
+
 Disabling Updates
 -----------------
 
@@ -99,6 +108,8 @@ By default, charts are updated with new data in real time
 according to the granularity selected in the **Group** menu.
 If you do not want to add new data to the charts,
 click **Disable updates** in the toolbar.
+
+.. image:: images/mm-disable-updates-button.png
 
 For example, you may find a possible minor problem
 that you want to analyze later.

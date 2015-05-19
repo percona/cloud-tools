@@ -30,3 +30,5 @@ To select the reporting period, use the **Time Range** menu
 in the right part of the toolbar.
 You can select a predefined time range
 or click the calendar icon to define a custom period.
+
+.. image:: images/selector.png

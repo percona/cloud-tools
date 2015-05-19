@@ -16,6 +16,14 @@ Every organization has a unique :term:`API key`,
 which is used by :term:`Percona Agent` to identify the data that it collects.
 Only members of the organization can view the data collected by this agent.
 
+The following types of accounts are available:
+
+* *Percona Cloud Tools* account is registered as described in
+  `Creating PCT Account`_.
+* `Percona Customer Portal <https://customers.percona.com>` account
+  for current Percona customers.
+* *Google* account.
+
 Creating PCT Account
 --------------------
 
@@ -35,11 +43,11 @@ Managing PCT Account
 When you log in, click your account name in the top right and select **Manage**.
 The following tabs are available:
 
-:Account: In this tab you can set your first name, last name, and time zone.
+:Account: In this tab, you can set your first name, last name, and time zone.
   You can also delete your account.
-:Security: In this tab you can change your account password.
-:Organizations: In this tab you can see the organizations
-  to which your account is assigned and add other organizations.
+:Security: In this tab, you can change your account password.
+:Organizations: In this tab, you can see the organizations
+  to which your account is assigned, add and manage other organizations.
 
 .. note:: Every organization has a unique API key.
    You specify it when installing *Percona Agent*.
