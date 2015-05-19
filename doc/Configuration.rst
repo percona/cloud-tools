@@ -23,6 +23,8 @@ click **Server Metrics** for a specific server.
 General server metrics include CPU, memory, disk,
 and other critical system readings that are not related to MySQL.
 
+.. image:: images/config-server.png
+
 The **Server Metrics** dialog enables you to configure
 how often Percona Agent collects and reports collected server metrics.
 If you do not require metrics to be collected for a server,
@@ -44,6 +46,8 @@ To configure how MySQL metrics are collected,
 click **MySQL Metrics** for a specific MySQL instance.
 MySQL metrics are used to populate charts for :term:`Metrics Monitor`.
 
+.. image:: images/config-mm.png
+
 To change the agent that collects MySQL metrics,
 stop the agent service, and use the **Agent** drop-down list.
 To configure how often the agent should collect and report collected metrics,
@@ -56,10 +60,14 @@ When you change necessary settings, click **Apply** to save changes.
 Reporting MySQL Configuration
 *****************************
 
+To configure how MySQL configuration is collected,
+click **MySQL Configuration**.
 MySQL uses configuration files to store operating parameters.
 Percona Agent collects these parameters along with other metrics.
 By default, they are retrieved using ``SHOW GLOBAL VARIABLES``
 and reported every hour.
+
+.. image:: images/config-mconf.png
 
 To change the agent that collects configuration parameters,
 stop the agent service, and use the **Agent** drop-down list.
@@ -73,6 +81,8 @@ Configuring Query Analytics
 To configure how query data is collected,
 click **Query Analytics** for a specific MySQL instance.
 Query data is used by :term:`Query Analytics`.
+
+.. image:: images/config-qan.png
 
 By default, query data is reported every minute.
 You can change the reporting period if necessary.
@@ -153,13 +163,16 @@ The **Log slow rate limit** field defines the fraction of queries to log.
 By default, the limit is set to 20,
 meaning that only 5% of queries should be logged (every 20th query).
 
-.. _agent-config::
+.. _agent-config:
 
 Agent Configuration
 -------------------
+
 The **Agent** tab contains information about all Percona Agents
 in your PCT infrastructure.
 You can see the version and status of agents on all servers.
+
+.. image:: images/config-agent.png
 
 PCT enables you to remotely control agents as follows:
 
@@ -192,6 +205,8 @@ The **Reports** tab contains settings for receiving regular reports
 by email from PCT.
 These reports contain a digest of critical performance data
 for MySQL instances known to PCT.
+
+.. image:: images/config-reports.png
 
 To enable reports, select **Enable server query reports**.
 If you want weekly reports to be enabled for new MySQL instances

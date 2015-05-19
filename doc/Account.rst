@@ -20,7 +20,7 @@ The following types of accounts are available:
 
 * *Percona Cloud Tools* account is registered as described in
   `Creating PCT Account`_.
-* `Percona Customer Portal <https://customers.percona.com>` account
+* `Percona Customer Portal <https://customers.percona.com>`_ account
   for current Percona customers.
 * *Google* account.
 

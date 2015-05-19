@@ -24,7 +24,7 @@ The following screenshot shows an example of the Query Profile table:
 By default, the table lists ten queries with the highest load.
 Use the **Sort by** field in the toolbar to change how queries are sorted:
 
-.. figure:: images/sum_max.png
+.. figure:: images/qan-sortby-menu.png
 
 :SUM: Sort queries by load (this is the default)
 :MAX: Sort queries by maximum time they took to execute
@@ -172,6 +172,8 @@ When you select a query in the `Query Profile`_ table,
 you can use the buttons in the right part of the `Query Details`_ section
 to set the status for the query and categorize it using tags.
 You can then filter queries according to the assigned status and tags.
+
+.. image:: images/qan-status-tag-filter.png
 
 At the bottom, you can add a comment for the query.
 This metadata is visible by all users in your organization,
