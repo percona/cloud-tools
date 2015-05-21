@@ -23,16 +23,19 @@ that rely on MySQL performance.
 .. contents::
   :local:
 
-Overview
---------
+How PCT Works
+-------------
 
-Data is collected using a :term:`Percona Agent`,
-which runs on a Linux server as a background service.
-The agent connects to an API server
-hosted by Percona through a secure websocket,
-and stores MySQL metrics and other performance data in a database.
-You can access and analyse collected performance data
-using the web interface accessed from your browser via
+Data is collected using :term:`Percona Agent`:
+a free, open-source, single-binary application.
+You can install *Percona Agent* on any Linux server with one command.
+The agent runs as a background service
+and connects to an API server hosted by Percona through a secure websocket.
+Collected MySQL metrics and other performance data is stored
+where only you and members of your team can access it.
+You can access the web application to analyse your data at
+`cloud.percona.com <https://cloud.percona.com>`_
+using any browser that supports
 :abbr:`HTTPS (Hypertext Transfer Protocol Secure)`.
 
 .. image:: images/pct-diagram.png
