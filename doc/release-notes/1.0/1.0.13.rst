@@ -9,17 +9,16 @@ Percona Agent 1.0.13
 New Features
 ------------
 
-* Limited the size of the data spool
+* **Added real-time Table Info to Query Analytics** to get
+  ``SHOW CREATE TABLE``, ``SHOW INDEX``, and ``SHOW TABLE STATUS``
+  for each table used by a query.
+* **Limited the size of the data spool**
   (:file:`/usr/local/percona/percona-agent/data`)
   to 1 hour, 10 MiB, and 100 files.
   Previously, when Percona Agent worked offline for some time
   (for example, because of connection issues)
   this data either filled up disk space indefinitely,
   or caused a network burst after it came back online.
-* Added support for table info queries
-  (``SHOW CREATE TABLE``, ``SHOW INDEX``, ``SHOW TABLE STATUS``).
-  This will enable users to get real-time table info
-  from Query Analytics in the web application, similar to real-time ``EXPLAIN``.
 
 Bugs fixed
 ----------
