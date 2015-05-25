@@ -61,8 +61,8 @@ To start using |PCT|:
 :download:`Check out this video to see how easy it is to get started
 <files/getstarted.mp4>`
 
-For more information about the requirements and ways to install
-*Percona Agent*, see the :doc:`Agent` section.
+For more information about the requirements and install options
+, see the :doc:`Agent` section.
 
 
 Contents
