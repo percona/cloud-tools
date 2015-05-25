@@ -16,23 +16,26 @@ Welcome to Percona Cloud Tools Documentation!
   * 5 agents per organization
   * 8 days of data per agent
 
-|PCT| is a cloud-based monitoring service for MySQL servers.
-It provides valuable insight into your database and applications
-that rely on MySQL performance.
+|PCT| is a hosted service that helps you manage MySQL performance.
+It provides insight into problematic queries and performance spikes
+that you may not notice with other tools.
 
 .. contents::
   :local:
 
-Overview
---------
+How PCT Works
+-------------
 
-Data is collected using a :term:`Percona Agent`,
-which runs on a Linux server as a background service.
-The agent connects to an API server
-hosted by Percona through a secure websocket,
-and stores MySQL metrics and other performance data in a database.
-You can access and analyse collected performance data
-using the web interface accessed from your browser via
+Data is collected using :term:`Percona Agent`:
+a free, open-source, single-binary application.
+You can install *Percona Agent* on any Linux server with one command.
+The agent runs as a background service
+and connects to an API server hosted by Percona through a secure websocket.
+Collected MySQL metrics and other performance data is stored
+where only you and members of your team can access it.
+You can access the web application to analyse your data at
+`cloud.percona.com <https://cloud.percona.com>`_
+using any browser that supports
 :abbr:`HTTPS (Hypertext Transfer Protocol Secure)`.
 
 .. image:: images/pct-diagram.png
@@ -40,17 +43,27 @@ using the web interface accessed from your browser via
 Quick Start
 -----------
 
+If you have MySQL server running and configured correctly,
+setting up |PCT| is as easy as running a single command.
+
 To start using |PCT|:
 
 1. Go to `cloud.percona.com <https://cloud.percona.com>`_,
    create a :term:`PCT Account` and log in.
 #. Get your :term:`API key` at
    `cloud.percona.com/api-key <https://cloud.percona.com/api-key>`_.
-#. Install *Percona Agent* by running the following command as root:
+#. Log in to your MySQL server as **root** and run the following command:
 
    ::
 
    $ curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key="<API key>"
+
+:download:`Check out this video to see how easy it is to get started
+<files/getstarted.mp4>`
+
+For more information about the requirements and install options
+, see the :doc:`Agent` section.
+
 
 Contents
 --------
