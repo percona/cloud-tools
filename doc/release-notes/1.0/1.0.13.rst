@@ -2,13 +2,16 @@
 Percona Agent 1.0.13
 ====================
 
-:Release Date: May 15, 2015
+:Release Date: May 19, 2015
 :Download: http://www.percona.com/downloads/percona-agent/1.0.13
 :Installation: http://cloud-docs.percona.com/Agent.html
 
 New Features
 ------------
 
+* **Added real-time Table Info to Query Analytics** to get
+  ``SHOW CREATE TABLE``, ``SHOW INDEX``, and ``SHOW TABLE STATUS``
+  for each table used by a query.
 * Limited the size of the data spool
   (:file:`/usr/local/percona/percona-agent/data`)
   to 1 hour, 10 MiB, and 100 files.
