@@ -1,12 +1,14 @@
-Web Interface
-===============
+.. |PCT| replace:: :abbr:`PCT (Percona Cloud Tools)`
 
-Percona Cloud Tools  provides a simple and very powerful web interface
-for monitoring and analyzing collected MySQL performance data.
-You can see your whole infrastructure, manage it, configure,
+=============
+Web Interface
+=============
+
+|PCT| is a hosted web application for analyzing MySQL performance.
+Use any browser to see your whole infrastructure, manage it, configure,
 and analyze collected data to improve performance.
 
-The web interface is located at `cloud.percona.com <http://cloud.percona.com>`_
+The web appliation is located at `cloud.percona.com <http://cloud.percona.com>`_
 
 Toolbar
 -------
@@ -14,13 +16,14 @@ Toolbar
 The top part of the web UI contains various menus in the toolbar,
 while the bottom part is reserved for displaying data.
 
-.. image:: images/PerconaConsole-head.png
+.. image:: images/app-header.png
+   :scale: 80
 
 1. The **User** menu enables you to manage your :term:`PCT Account`,
    switch to another one, or log out.
 2. The **Organization** menu enables you to select the :term:`organization`
    that you want to monitor.
-   All organizations, where the current :term:`user` is a member,
+   All organizations, where the current :term:`user` is present,
    are listed in the drop-down list.
 3. The **Time Range** menu enables you to select the time range for monitoring.
    Only data collected during the selected time range will be available.
@@ -34,9 +37,6 @@ while the bottom part is reserved for displaying data.
    :Metrics: Access the *Metrics Monitor* tool.
    :Queries: Access the *Query Analytics* tool.
    :Configure: Access general PCT settings.
-   :Admin: Access advanced configuration settings
-    available only to users with *Admin* and *Owner* rights
-    in the selected organization.
 
 .. _sysinfo:
 
