@@ -1,7 +1,7 @@
 .. _glossary:
 
-Glossary of Terms
-=================
+Glossary
+========
 
 This is a glossary of terms related to Percona Cloud Tools (PCT).
 

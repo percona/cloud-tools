@@ -29,20 +29,23 @@ Percona Agent communicates using the :abbr:`URI (uniform resource locator)`
 specified by the ``link`` entry in
 :file:`/usr/local/percona/percona-agent/config/agent.conf`.
 
-Why does Percona Agent fill up disk space?
+Does Percona Agent store data locally?
 ------------------------------------------
 
-Percona Agent saves collected data to the
-:file:`/usr/local/percona/percona-agent/data` folder before sending it to PCT.
-If there is a connection issue and it fails to send data,
-the agent stores this data until it manages to send it.
+Percona Agent aggregates collected data in the
+:file:`/usr/local/percona/percona-agent/data` folder.
+It usually reports collected data in regular intervals,
+but if there is a connection issue,
+this data is stored until the agent manages to send it.
 
-Starting from Percona Agent version 1.0.13,
-this data is limited to the following:
+As of Percona Agent 1.0.13, the following limits apply to local data:
 
 * 1 hour
 * 10 MiB
 * 100 files
+
+Previous versions did not limit the size of the :file:`data` folder,
+which lead to situations when Percona Agent filled up disk space indefinitely.
 
 What does ``write unix /var/lib/mysql/mysql.sock: broken pipe`` message mean?
 -----------------------------------------------------------------------------
@@ -81,7 +84,8 @@ with old password authentication, specify the ``-old-passwords=true`` option.
 
 For MySQL 4.1 and later versions,
 you may have old passwords enabled explicitely.
-In this case, you can disable old passwords on session level:
+In this case, you can disable old passwords for one session
+while you install Percona Agent:
 
 .. code-block:: mysql
 
