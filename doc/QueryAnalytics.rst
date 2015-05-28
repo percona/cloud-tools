@@ -132,6 +132,7 @@ However, the columns in the table are the same for all metrics:
  and so on.
 
 :Maximum: The maximum of whatever units are used by the metric.
+
  For *Query_time*, it is the maximum execution time for a query,
  for *Rows_sent*, it is the maximum rows in MySQL tables sent by a query,
  and so on.
@@ -170,13 +171,18 @@ when the query was first and last seen.
 It also contains a *Metrics* table similar to the `Server Summary`_,
 as well as a *Query Plan* for the selected query.
 
+Real-time EXPLAIN and Table Info
+********************************
+
 At the bottom of the **Query Details** section,
 you can see an example of the selected query.
+
 For information about how MySQL executes the query,
 run ``EXPLAIN`` on the query.
-There is a link you can click to run ``EXPLAIN`` for the selected query
-directly from within PCT, and get a response.
-Alternatively, you can manually copy and paste the query to the server.
+For this, you can manually copy and paste the query to the server.
+
+PCT enables you to run ``EXPLAIN`` for the selected query
+directly from within PCT, and get a response in real time.
 
 .. note:: If you are using Percona Server 5.5 or earlier version,
    ``EXPLAIN`` is available only for ``SELECT`` queries
@@ -185,6 +191,11 @@ Alternatively, you can manually copy and paste the query to the server.
    you can run ``EXPLAIN`` for ``UPGRADE``, ``INSERT``, and ``DELETE``
    queries if you add necessary additional permissions
    to the Percona Agent user.
+
+You can also run Table Info for the selected query.
+This enables you to get ``SHOW CREATE TABLE``, ``SHOW INDEX``,
+and ``SHOW TABLE STATUS`` for each table used by the query
+directly from within PCT.
 
 Reviewing Queries
 -----------------
