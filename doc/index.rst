@@ -30,7 +30,7 @@ Data is collected using :term:`Percona Agent`:
 a free, open-source, single-binary application.
 You can install *Percona Agent* on any Linux server with one command.
 The agent runs as a background service
-and connects to an API server hosted by Percona through a secure websocket.
+and connects to |PCT|  through a secure websocket.
 Collected MySQL metrics and other performance data is stored
 where only you and members of your team can access it.
 You can access the web application to analyse your data at
@@ -39,6 +39,7 @@ using any browser that supports
 :abbr:`HTTPS (Hypertext Transfer Protocol Secure)`.
 
 .. image:: images/pct-diagram.png
+  :align: center
 
 Quick Start
 -----------
