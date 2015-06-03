@@ -2,7 +2,7 @@
  Percona Agent 1.0.9
 =====================
 
-Percona is glad to announce the release of Percona Agent 1.0.9 on October 22nd 2014. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/1.0.9/>`_. Percona Agent can be `installed <http://cloud-docs.percona.com/Install.html>`_ or `upgraded <http://cloud-docs.percona.com/Install.html#updating-the-agent>`_ as described in the `manual <http://cloud-docs.percona.com/index.html>`_. This version of ``pt-agent`` has been built with with Go MySQL driver ver. `0b000424e5 <https://github.com/go-sql-driver/mysql/commit/0b000424e546f305e0bd47856d5fcb904c1a0eb4>`_.
+Percona is glad to announce the release of Percona Agent 1.0.9 on October 22nd 2014. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/percona-agent-1.0.9/>`_. Percona Agent can be installed or updated as described in the `manual <http://cloud-docs.percona.com/index.html>`_. This version of ``pt-agent`` has been built with with Go MySQL driver ver. `0b000424e5 <https://github.com/go-sql-driver/mysql/commit/0b000424e546f305e0bd47856d5fcb904c1a0eb4>`_.
 
 New Features
 ------------
@@ -16,7 +16,7 @@ Bugs Fixed
 
  * Restarting the *Percona Agent* wouldn't start the agent if it wasn't running.
 
- * *Percona Agent* now handles the big data files correctly. In normal cases, :ref:`query-analytics` produces data files in the 100-500k range. However, in some cases, if there are many large ``INSERT`` statements, data files would grow to 100M or more. This was causing issues in transferring the data and blocking the normal data files. 
+ * *Percona Agent* now handles the big data files correctly. In normal cases, Query Analytics produces data files in the 100-500k range. However, in some cases, if there are many large ``INSERT`` statements, data files would grow to 100M or more. This was causing issues in transferring the data and blocking the normal data files. 
 
  * ``SET`` statements in the slow logs were not parsed correctly.
 

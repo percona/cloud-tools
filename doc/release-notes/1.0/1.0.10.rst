@@ -2,7 +2,7 @@
  Percona Agent 1.0.10
 ======================
 
-Percona is glad to announce the release of Percona Agent 1.0.10 on January 6th 2015. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/1.0.10>`_. Percona Agent can be `installed <http://cloud-docs.percona.com/Install.html>`_ or `upgraded <http://cloud-docs.percona.com/Install.html#updating-the-agent>`_ as described in the `manual <http://cloud-docs.percona.com/index.html>`_. 
+Percona is glad to announce the release of Percona Agent 1.0.10 on January 6th 2015. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/percona-agent-1.0.10>`_. Percona Agent can be installed or updated as described in the `manual <http://cloud-docs.percona.com/index.html>`_. 
 
 New Features
 ------------
@@ -38,6 +38,6 @@ Bugs Fixed
  
  * In some cases ``USE database`` lines in the slow query log were not parsed correctly.
 
- * *MySQL* restart monitor could send false-positive signals which could cause agent to unnecessarily restart :ref:`query-analytics`.
+ * *MySQL* restart monitor could send false-positive signals which could cause agent to unnecessarily restart Query Analytics`.
 
  * *MySQL* `information <https://cloud.percona.com/instances/mysql>`_ wasn't updated after the server has been restarted.

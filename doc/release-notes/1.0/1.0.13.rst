@@ -3,25 +3,33 @@ Percona Agent 1.0.13
 ====================
 
 :Release Date: May 19, 2015
-:Download: http://www.percona.com/downloads/percona-agent/1.0.13
+:Download: http://www.percona.com/downloads/percona-agent/percona-agent-1.0.13
 :Installation: http://cloud-docs.percona.com/Agent.html
 
 New Features
 ------------
 
-* **Added real-time Table Info to Query Analytics** to get
-  ``SHOW CREATE TABLE``, ``SHOW INDEX``, and ``SHOW TABLE STATUS``
-  for each table used by a query.
-* Limited the size of the data spool
-  (:file:`/usr/local/percona/percona-agent/data`)
-  to 1 hour, 10 MiB, and 100 files.
-  Previously, when Percona Agent worked offline for some time
-  (for example, because of connection issues)
-  this data either filled up disk space indefinitely,
-  or caused a network burst after it came back online.
+.. rubric:: Real-time Table Info
 
-Bugs fixed
-----------
+When using Query Analytics,
+you can get ``SHOW CREATE TABLE``,
+``SHOW INDEX``, and ``SHOW TABLE STATUS``
+for each table used by a query.
+
+.. rubric:: Local data spool limits
+
+Percona Agent saves data locally in
+:file:`/usr/local/percona/percona-agent/data`
+before sending it to PCT.
+This data is now  limited to 1 hour, 10 MiB, and 100 files.
+
+In previous versions, when Percona Agent worked offline for some time
+(for example, because of connection issues)
+this data either filled up disk space indefinitely,
+or caused a network burst after it came back online.
+
+Bug Fixes
+---------
 
 * Resolved an issue when queries had ``first_seen`` attribute
   later than ``last_seen`` attribute.
@@ -29,7 +37,7 @@ Bugs fixed
 * Removed warnings like ``strconv.ParseFloat: parsing "ON": invalid syntax``
   from the Percona Agent log.
 
-  Starting from MySQL 5.6 and later versions, ``SHOW GLOBAL STATUS``
+  As of MySQL 5.6 and later versions, ``SHOW GLOBAL STATUS``
   does not contain only number variables.
   This caused Percona Agent to flood the log with warning messages
   when a value of a variable could not be converted.

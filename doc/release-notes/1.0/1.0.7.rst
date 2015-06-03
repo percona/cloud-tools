@@ -2,12 +2,12 @@
  Percona Agent 1.0.7
 =====================
 
-Percona is glad to announce the release of Percona Agent 1.0.7 on September 5th 2014. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/1.0.7/>`_. Percona Agent can be `installed <http://cloud-docs.percona.com/Install.html>`_ or `upgraded <http://cloud-docs.percona.com/Install.html#updating-the-agent>`_ as described in the `manual <http://cloud-docs.percona.com/index.html>`_. This version of ``pt-agent`` has been built with with Go MySQL driver ver. `0b000424e5 <https://github.com/go-sql-driver/mysql/commit/0b000424e546f305e0bd47856d5fcb904c1a0eb4>`_.
+Percona is glad to announce the release of Percona Agent 1.0.7 on September 5th 2014. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/percona-agent-1.0.7/>`_. Percona Agent can be installed or updated as described in the `manual <http://cloud-docs.percona.com/index.html>`_. This version of ``pt-agent`` has been built with with Go MySQL driver ver. `0b000424e5 <https://github.com/go-sql-driver/mysql/commit/0b000424e546f305e0bd47856d5fcb904c1a0eb4>`_.
 
 New Features
 ------------
 
- * ``pt-agent`` is now able to gather the detailed system and MySQL server information. This information is gathered by running the ``pt-summary`` and ``pt-mysql-summary`` on a server. Gathered information will be displayed in the :ref:`system-info` section in `Percona Cloud Tools <https://cloud.percona.com/>`_.
+ * ``pt-agent`` is now able to gather the detailed system and MySQL server information. This information is gathered by running the ``pt-summary`` and ``pt-mysql-summary`` on a server. Gathered information will be displayed in the System Info section in `Percona Cloud Tools <https://cloud.percona.com/>`_.
 
 Bugs Fixed
 ----------
