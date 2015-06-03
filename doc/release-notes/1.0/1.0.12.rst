@@ -3,7 +3,7 @@ Percona Agent 1.0.12
 ====================
 
 :Release Date: April 8, 2015
-:Download: http://www.percona.com/downloads/percona-agent/1.0.12
+:Download: http://www.percona.com/downloads/percona-agent/percona-agent-1.0.12
 :Installation: http://cloud-docs.percona.com/Install.html
 
 New Features
