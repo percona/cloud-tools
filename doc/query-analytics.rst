@@ -1,5 +1,11 @@
+.. _qan:
+
+===============
 Query Analytics
 ===============
+
+Setting Up Dashboards
+---------------------
 
 The **Query Analytics** tool enables database administrators
 and application developers to analyze MySQL queries over periods of time

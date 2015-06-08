@@ -6,7 +6,6 @@ Frequently Asked Questions
 .. contents::
    :local:
 
-
 How to install Percona Agent on Amazon RDS?
 -------------------------------------------
 

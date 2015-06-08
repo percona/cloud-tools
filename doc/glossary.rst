@@ -3,7 +3,7 @@
 Glossary
 ========
 
-This is a glossary of terms related to Percona Cloud Tools (PCT).
+The following is a list of terms related to Percona Cloud Tools (PCT).
 
 .. glossary::
 
