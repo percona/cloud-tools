@@ -1,48 +1,46 @@
 .. highlight:: bash
 
+.. |PCT| replace:: :abbr:`PCT (Percona Cloud Tools)`
+
 Percona Agent
 =============
 
-.. sidebar:: Release Notes
-
-   * :doc:`release-notes/1.0/1.0.13`
-   * :doc:`release-notes/1.0/1.0.12`
-   * :doc:`release-notes/1.0/1.0.11`
-   * :doc:`release-notes/1.0/1.0.10`
-   * :doc:`release-notes/1.0/1.0.9`
-   * :doc:`release-notes/1.0/1.0.8`
-   * :doc:`release-notes/1.0/1.0.7`
-
-*Percona Agent* is a background service that collects MySQL server metrics
-and sends this data over a secure websocket connection to the
-:abbr:`API (application programming interface)`
-that stores it in a database hosted by Percona.
-The agent uses a unique :term:`API key` to identify the data
-for a specific :term:`organization`.
+Percona Agent is a background service that collects performance data
+and sends it over a secure websocket connection to |PCT|.
 
 Percona Agent code is open source, and available on
 `GitHub <https://github.com/percona/percona-agent>`_.
 
-Depending on your needs and preferences,
-you can install Percona Agent in one of the following ways:
+.. _quick-install:
 
-`Quick Install`_
- Install the latest version of Percona Agent
- using a non-interactive install script,
- which attempts to configure everything automatically.
+To install Percona Agent:
 
-`Standard Install`_
- Download and install a specific version of Percona Agent
- using an interactive install script,
- which you can control using command-line options
- for specific cases, such as:
+1. Get the :term:`API key` at https://cloud.percona.com/api-key.
+#. Run the following command as **root**:
 
- * `Automated Install`_
- * `Slave Install`_
- * `Non-MySQL Install`_
+   ::
 
-`Using Percona Software Repositories`_
- Install Percona Agent using your operating system's package manager.
+   $ curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key="<API key>"
+
+The installer attempts to automatically detect necessary MySQL options,
+as described in `System Requirements`_.
+If it fails, the installed Percona Agent will not be able to collect any
+MySQL metrics and query data, only general system metrics.
+For more control over the installation process, see `Package Install`_.
+
+Release Notes
+-------------
+
+.. toctree::
+  :maxdepth: 1
+
+  release-notes/1.0/1.0.13
+  release-notes/1.0/1.0.12
+  release-notes/1.0/1.0.11
+  release-notes/1.0/1.0.10
+  release-notes/1.0/1.0.9
+  release-notes/1.0/1.0.8
+  release-notes/1.0/1.0.7
 
 System Requirements
 -------------------
@@ -89,45 +87,28 @@ with the following privileges:
 .. note:: Instead of ``localhost``, a specific IP (such as ``127.0.0.1``)
    or the ``%`` wildcard can be used.
 
-Quick Install
--------------
-
-1. Get the *API key* at https://cloud.percona.com/api-key.
-#. Run the following command as root:
-
-   ::
-
-   $ curl -s https://cloud.percona.com/install | bash /dev/stdin -api-key="<API key>"
-
-The install script attempts to automatically detect necessary MySQL options,
-as described in `System Requirements`_.
-If it fails, the installed Percona Agent will not be able to collect any
-MySQL metrics and query data, only general server metrics.
-For more control over the installation process, see `Standard Install`_.
-
-Standard Install
-----------------
+Package Install
+---------------
 
 .. sidebar:: Specific Version
 
-   Standard install can be used to install a specific version of Percona Agent,
+   Package install can be used to install a specific version of Percona Agent,
    other than the latest.
    For this, select the required version from the drop-down list on the
    `Download page <http://www.percona.com/downloads/percona-agent/>`_.
 
-1. `Download <http://www.percona.com/downloads/percona-agent/LATEST/>`_
-   the archive with the latest Percona Agent distribution.
-#. Extract the archive and change to the directory it creates.
-#. Run the :file:`./install` script as root.
-
-The Percona Agent distribution contains an interactive install script
+The Percona Agent distribution package contains an interactive install script
 that prompts the user for input when it is not able to detect necessary options.
 For example, the script prompts for the
-*API key*, unless you specify it using the ``-api-key`` option.
+API key, unless you specify it using the ``-api-key`` option.
+
+1. `Download <http://www.percona.com/downloads/percona-agent/LATEST/>`_
+   the archive with the latest Percona Agent distribution package.
+#. Extract the archive and change to the directory it creates.
+#. Run the :file:`./install` script as **root**.
 
 There are many options that you can pass to the
-install script for specific cases.
-Some of them are discussed in the following sections:
+install script for specific cases:
 
 * `Automated Install`_
 * `Slave Install`_
@@ -142,14 +123,15 @@ Automated Install
 
 To automate installation and disable install script prompts,
 use the ``-interactive=false`` option.
-In this case, installation will be the same as during a `Quick Install`_.
+In this case, installation will be the same as during a
+:ref:`Quick Install <quick-install>`.
 
 .. note:: If you run the install script in non-interactive mode,
    you have to specify the ``-api-key`` option.
 
 If the installer fails to detect necessary MySQL options,
 Percona Agent will not be able to collect MySQL metrics and query data,
-only general server metrics.
+only general system metrics.
 To avoid this, you can pass necessary MySQL options to the install script,
 for example::
 
@@ -182,15 +164,17 @@ pass the ``-mysql=false`` option to the install script::
 
 $ ./install -mysql=false
 
-In this case, Percona Agent will monitor only general server metrics.
+In this case, Percona Agent will monitor only general system metrics.
 
 Using Percona Software Repositories
 -----------------------------------
 
-Percona provides repositories for :command:`yum`
-(RPM packages for RedHat, CentOS, Amazon Linux AMI, etc.) and :command:`apt` 
-(.deb packages for Debian, Ubuntu, etc.) package managers.
-You can use those repositories to install and update all Percona software
+Percona provides repositories for popular package managers:
+
+* :command:`yum` (RPM packages for RedHat, CentOS, Amazon Linux AMI, etc.)
+* :command:`apt` (.deb packages for Debian, Ubuntu, etc.)
+
+You can use those package managers to install and update all Percona software
 with any dependencies.
 
 Installing on RPM-based systems
@@ -199,21 +183,19 @@ Installing on RPM-based systems
 To install Percona Agent using the :command:`yum` manager:
 
 1. Install an RPM that configures :command:`yum` and installs the
-   `Percona GPG key <http://www.percona.com/downloads/RPM-GPG-KEY-percona>`_
-   using the following command:
+   `Percona GPG key <http://www.percona.com/downloads/RPM-GPG-KEY-percona>`_:
 
    ::
 
    $ yum install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
 
-2. Make sure that Percona packages are available from the repository
-   using the following command:
+2. Make sure that Percona packages are available from the repository:
 
    ::
 
    $ yum list | grep percona
 
-3. Install the Percona Agent package using the following command:
+3. Install the Percona Agent package:
 
    ::
 
@@ -224,7 +206,7 @@ Installing on Debian-based systems
 
 To install using the :command:`apt` manager:
 
-1. Add Percona package key to :command:`apt` using the following command:
+1. Add Percona package key to :command:`apt`:
 
    ::
 
@@ -235,18 +217,18 @@ To install using the :command:`apt` manager:
    For example, if you are running Ubuntu 14.04 (Trusty Tahr),
    add the following lines:
 
-   ::
+   .. code-block:: none
 
-    deb http://repo.percona.com/apt trusty main
-    deb-src http://repo.percona.com/apt trusty main
+      deb http://repo.percona.com/apt trusty main
+      deb-src http://repo.percona.com/apt trusty main
 
-3. Update local cache using the following command:
+3. Update local cache:
 
    ::
 
    $ apt-get update
 
-4. Install the Percona Agent package using the following command:
+4. Install the Percona Agent package:
 
    ::
 
@@ -269,7 +251,7 @@ Updating Percona Agent
 ----------------------
 
 When a new version of Percona Agent is available,
-use either `Quick Install`_ or `Standard Install`_.
+use either :ref:`Quick Install <quick-install>` or `Package Install`_ to update.
 The install script checks for the currently installed version
 and applies necessary updates.
 
@@ -303,18 +285,20 @@ then you can update it as follows:
 Uninstalling Percona Agent
 --------------------------
 
-If you did a `Quick Install`_, run the following command::
+If you did a :ref:`Quick Install <quick-install>`,
+run the following command to uninstall Percona Agent::
 
 $ curl -s https://cloud.percona.com/install | bash /dev/stdin -uninstall
 
-If you did a `Standard Install`_,
+If you did a `Package Install`_,
 change to the directory where the Percona Agent archive was extracted
 and run the following command::
 
 $ ./install -uninstall
 
 To drop the Percona Agent user from any MySQL instance
-that the agent was monitoring, execute the following:
+that the agent was monitoring,
+execute the following on the MySQL server:
 
 .. code-block:: mysql
 
