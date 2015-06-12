@@ -19,7 +19,7 @@ Contents
 .. toctree::
   :maxdepth: 1
 
-  get-sarted
+  get-started
   percona-agent/index
   query-analytics
   metrics-monitor
