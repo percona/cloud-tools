@@ -6,6 +6,19 @@ Frequently Asked Questions
 .. contents::
    :local:
 
+Why does Percona Agent stop on its own?
+---------------------------------------
+
+If you are not stopping the **percona-agent** process manually,
+it is likely that the API is sending a ``stop`` command.
+We regularly release new versions of Percona Agent
+with support for new features in PCT.
+Older versions may become deprecated due to lack of necessary functionality.
+In this case, we program the API to stop agents older than a specific version.
+
+Make sure to regularly update as described in :ref:`update`.
+
+The current minimum supported version is 1.0.11.
 
 How to install Percona Agent on Amazon RDS?
 -------------------------------------------
