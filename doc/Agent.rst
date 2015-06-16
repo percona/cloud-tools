@@ -265,6 +265,8 @@ Alternatively, use the following::
 
 $ sudo service percona-agent {start|stop|restart|status}
 
+.. _update:
+
 Updating Percona Agent
 ----------------------
 
