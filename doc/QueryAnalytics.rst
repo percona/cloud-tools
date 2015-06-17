@@ -210,7 +210,9 @@ You can then filter queries according to the assigned status and tags.
 .. image:: images/qan-status-tag-filters.png
 
 At the bottom, you can add a comment for the query.
-This metadata is visible by all users in your organization,
+Comments support Markdown syntax.
+
+Comments, tags, and query status is visible by all users in your organization,
 which enables collaboration for reviewing and tuning query performance.
 
 As you review queries, change the status accordingly:
@@ -243,7 +245,7 @@ Starting from MySQL 5.6 (including Percona Server 5.6 and later),
 you can select to parse query data from the Performance Schema.
 
 Performance Schema is not as data-rich as the slow query log,
-but it has all the critical data and is generally faster.
+but it has all the critical data and is generally faster to parse.
 In some cases, it may be the only alternative.
 
 To use Performance Schema:

@@ -118,8 +118,8 @@ The **Query Analytics Configuration** dialog enables you to:
    see :ref:`perf-schema`.
 
 If you select to use Performance Schema,
-you can run ``TRUNCATE performance_schema.events_statements_summary_by_digest``
-when the Query Analytics tool starts.
+you truncate the ``performance_schema.events_statements_summary_by_digest``
+table once when Query Analytics starts.
 This ensures that there is no invalid SQL code left by third-party tools,
 which may not be properly handled by Percona Agent.
 
