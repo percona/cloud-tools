@@ -4,7 +4,7 @@
 Welcome to Percona Cloud Tools Documentation!
 =============================================
 
-.. note::
+.. sidebar:: Beta
 
   |PCT| is currently in beta. The following limitations apply:
 
@@ -12,14 +12,13 @@ Welcome to Percona Cloud Tools Documentation!
   * 5 agents per organization
   * 8 days of data per agent
 
-
 Contents
 --------
 
 .. toctree::
   :maxdepth: 1
 
-  get-started
+  Getting Started <get-started>
   percona-agent/index
   query-analytics
   metrics-monitor
