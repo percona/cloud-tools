@@ -15,7 +15,7 @@ How PCT Works
 -------------
 
 *Percona Agent* collects performance data from a MySQL server, encrypts it,
-and sends to |PCT| through a secure websocket connection.
+and sends to |PCT| through a *secure websocket* connection.
 Any members of your team can access the web application to analyse your data at
 `cloud.percona.com <https://cloud.percona.com>`_
 using any browser that supports
@@ -27,7 +27,7 @@ using any browser that supports
 Tools
 -----
 
-|PCT| provides several tools for analysing collected data:
+|PCT| provides the following tools for analysing collected data:
 
 * :ref:`qan` aggregates MySQL query digest data to find performance problems.
   You can see a range of metrics for each individual query

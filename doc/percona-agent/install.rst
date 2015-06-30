@@ -1,5 +1,8 @@
 .. highlight:: bash
 
+.. |br| raw:: html
+   <br />
+
 .. _install:
 
 ================================
@@ -11,12 +14,11 @@ the following installation types are available:
 
 .. list-table:: Installation Types
    :header-rows: 1
-   :stub-columns: 1
 
    * - Source
-     - :ref:`Web <web>` (cloud.percona.com)
-     - :ref:`Package <package>` (``rpm``, ``deb``, ``tar.gz``)
-     - :ref:`Repositories <repo>` (:command:`yum` and :command:`apt`)
+     - :ref:`Web <web>` |br| (cloud.percona.com)
+     - :ref:`Package <package>` |br| (``rpm``, ``deb``, ``tar.gz``)
+     - :ref:`Repositories <repo>` |br| (``yum`` and ``apt``)
    * - Uses
      - :command:`curl`
      - Install script
@@ -275,7 +277,7 @@ and run the following command:
 
  $ ./install -uninstall
 
-To drop the Percona Agent user from any MySQL instance
+To drop the **percona-agent** user from any MySQL instance
 that the agent was monitoring, execute the following:
 
 .. code-block:: mysql

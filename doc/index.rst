@@ -17,7 +17,8 @@ Welcome to Percona Cloud Tools Documentation!
 Documentation is organizaed into sections according to features and components.
 The first section covers basic concepts and provides links to related material.
 
-.. toctree:: Contents
+.. toctree::
+  :caption: Contents
   :maxdepth: 1
 
   Getting Started <get-started>
