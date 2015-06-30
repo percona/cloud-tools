@@ -1,10 +1,12 @@
 .. |PCT| replace:: :abbr:`PCT (Percona Cloud Tools)`
 
+.. _index:
+
 =============================================
 Welcome to Percona Cloud Tools Documentation!
 =============================================
 
-.. sidebar:: Beta
+.. sidebar:: Beta Disclaimer
 
   |PCT| is currently in beta. The following limitations apply:
 
@@ -12,10 +14,10 @@ Welcome to Percona Cloud Tools Documentation!
   * 5 agents per organization
   * 8 days of data per agent
 
-Contents
---------
+Documentation is organizaed into sections according to features and components.
+The first section covers basic concepts and provides links to related material.
 
-.. toctree::
+.. toctree:: Contents
   :maxdepth: 1
 
   Getting Started <get-started>

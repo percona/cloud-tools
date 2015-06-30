@@ -7,8 +7,6 @@ Getting Started with Percona Cloud Tools
 ========================================
 
 |PCT| is a hosted service that helps you manage MySQL performance.
-It provides insight into problematic queries and performance spikes
-that you may not notice with other tools.
 
 .. contents::
   :local:
@@ -16,14 +14,9 @@ that you may not notice with other tools.
 How PCT Works
 -------------
 
-Data is collected using :term:`Percona Agent`:
-a free, open-source, single-binary application.
-You can install *Percona Agent* on any Linux server with one command.
-The agent runs as a background service
-and connects to |PCT|  through a secure websocket.
-Collected MySQL metrics and other performance data is stored
-where only you and members of your team can access it.
-You can access the web application to analyse your data at
+*Percona Agent* collects performance data from a MySQL server, encrypts it,
+and sends to |PCT| through a secure websocket connection.
+Any members of your team can access the web application to analyse your data at
 `cloud.percona.com <https://cloud.percona.com>`_
 using any browser that supports
 :abbr:`HTTPS (Hypertext Transfer Protocol Secure)`.
@@ -36,7 +29,7 @@ Tools
 
 |PCT| provides several tools for analysing collected data:
 
-* :ref:`qan` aggregates query digest data to see which queries cause problems.
+* :ref:`qan` aggregates MySQL query digest data to find performance problems.
   You can see a range of metrics for each individual query
   and run diagnostic queries to see execution details.
 
@@ -86,11 +79,31 @@ Switching Organizations
 -----------------------
 
 When you register a PCT account, a default organization is created for you.
-You can use this default organization if you are planning to use |PCT| alone.
+You can use this default organization to get started.
+You can also create other organizations and be added to existing organizations.
 
+To switch between organizations,
+use the drop-down menu above the *Instance Tree*.
+
+For more information about organizations, see :ref:`users-orgs`.
+
+Using the Instance Tree
+-----------------------
+
+The *Instance Tree* is a hierarchical representation of your infrastructure,
+which corresponds to the currently selected organization.
+
+* An *OS instance* represents a physical or virtual machine.
+
+* An *Agent instance* represents a **percona-agent** service
+  running on the machine.
+
+* A *MySQL instance* represents a MySQL server on the machine.
 
 Selecting Time Range
 --------------------
 
-Using the Instance Tree
------------------------
+|PCT| displays data collected during the time range
+selected in the **Time Range** menu.
+You can choose one of the predefined options
+(last hour, day, month, three months, year) or select a custom range.
