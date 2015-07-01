@@ -1,13 +1,32 @@
 .. highlight:: bash
 
-.. |br| raw:: html
-   <br />
-
 .. _install:
 
 ================================
 Percona Agent Installation Guide
 ================================
+
+.. Web Install
+
+    * Uses :command:`curl` to get the latest installer from cloud.percona.com
+    * Fast and fully automated
+    * Relies on correct configuration of MySQL
+    * No interactive prompts or manual input
+    * No system-based updates
+      
+  Package Install
+
+    * Uses an install script in an ``rpm``, ``deb``, or ``tar.gz`` package
+    * By default, prompts user for necessary input
+    * Accepts command-line options for full manual control
+    * Can be automated
+    * No system-based updates
+      
+  Percona Repositories
+
+    * Uses either ``yum`` or ``apt`` package manager
+    * Requires you to manually configure and start the service after installation
+    * Can be updated using the package manager
 
 Depending on your needs and preferences,
 the following installation types are available:
@@ -15,19 +34,23 @@ the following installation types are available:
 .. list-table:: Installation Types
    :header-rows: 1
 
+   * - 
+     - :ref:`web`
+     - :ref:`package`
+     - :ref:`Repositories <repo>`
    * - Source
-     - :ref:`Web <web>` |br| (cloud.percona.com)
-     - :ref:`Package <package>` |br| (``rpm``, ``deb``, ``tar.gz``)
-     - :ref:`Repositories <repo>` |br| (``yum`` and ``apt``)
+     - cloud.percona.com
+     - ``rpm`` ``deb`` ``tar.gz``
+     - ``yum`` ``apt``
    * - Uses
      - :command:`curl`
      - Install script
      - Package manager
    * - Automated [1]_
      - Yes (only)
-     - Yes (by default)
      - Yes
-   * - Manual/Interactive [2]_
+     - No
+   * - Manual [2]_
      - No
      - Yes
      - Yes
@@ -52,9 +75,8 @@ the following installation types are available:
 Web Install
 -----------
 
-This is the fastest way to install the latest version of Percona Agent.
-A non-interactive installer is used,
-which attempts to configure everything automatically.
+The following is the fastest way to install the latest version of Percona Agent,
+if MySQL is configured correctly:
 
 1. Get the *API key* at https://cloud.percona.com/api-key.
 2. Run the following command as root:
@@ -103,14 +125,16 @@ For a complete list of options,
 run the install script with the ``-help`` option
 or see the :ref:`Install Script Options <options>` page.
 
+.. _automated:
+
 Automated Install
 ^^^^^^^^^^^^^^^^^
 
 To automate installation and disable install script prompts,
 use the ``-interactive=false`` option.
-In this case, installation will be the same as during a `Quick Install`_.
+In this case, installation will be the same as during a :ref:`web`.
 
-.. note:: In this case, you have to specify the ``-api-key`` option.
+.. note:: Do not forget to specify the ``-api-key`` option.
 
 If the installer fails to detect necessary MySQL options,
 Percona Agent will not be able to collect MySQL metrics and query data,
@@ -121,6 +145,8 @@ for example:
 ::
 
  $ ./install -interactive=false -api-key=1a2b3c -mysql-user=root -mysql-pass=pass -mysql-socket=/var/run/mysqld/mysqld.sock
+
+.. _slave:
 
 Slave Install
 ^^^^^^^^^^^^^

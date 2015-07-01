@@ -1,0 +1,41 @@
+======================
+ Percona Agent 1.0.11
+======================
+
+Percona is glad to announce the release of Percona Agent 1.0.11 on February 24th 2015. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/percona-agent-1.0.11>`_. Percona Agent can be installed or updated as described in the `manual <http://cloud-docs.percona.com/index.html>`_. 
+
+New Features
+------------
+ 
+ * Query Analytics for Performance Schema has been rewritten.
+
+ * *Percona Agent* now collects all Performance schema metrics.
+
+ * *Percona Agent* user can now be added to the server which has `old_passwords <https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_old_passwords>`_ option enabled by installing the agent with the ``--old-passwords`` command option.
+
+ * *Percona Agent* now supports using ``EXPLAIN`` for non ``SELECT`` queries in Query Analytics as well.   
+
+Bugs Fixed
+----------
+
+ * *Percona Agent* was truncating Perfomance Schema tables which could issues for other applications using the Performance Schema.
+
+ * *Percona Agent*  ``init`` script now verifies if running binary under ``PID`` file corresponds to ``percona-agent`` instance.
+
+ * Existing *Percona Agent* ``PID`` file didn't prevent second instance of the agent being started.
+
+ * Metrics Monitoring ``value lap`` information was logged as error instead of information.
+
+ * If the slow query log contained a line with a malformed ``Timestamp`` or ``User`` fields, Query Analytics slow log parser would crash. 
+
+ * *Percona Agent* will now show a warning when being installed on an unsupported platform. 
+
+ * Query fingerprint is no longer replacing numbers in words.
+
+ * If a ``SELECT`` query contained ``USE``, it was abbreviated as ``USE`` query instead of ``SELECT`` in the fingerprint list.  
+
+ * *Percona Agent* didn't log any errors when Query Analytics was used with the Performance Schema.
+
+ * Metrics Monitoring didn't detect MySQL restart if MySQL was started after the agent.
+
+ * *Percona Agent* will not start if unrecognized command option is specified. Previously it would ignored the unrecognized options and start. 

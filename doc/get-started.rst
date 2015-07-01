@@ -10,6 +10,7 @@ Getting Started with Percona Cloud Tools
 
 .. contents::
   :local:
+  :backlinks: top
 
 How PCT Works
 -------------

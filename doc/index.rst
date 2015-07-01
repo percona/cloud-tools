@@ -14,11 +14,11 @@ Welcome to Percona Cloud Tools Documentation!
   * 5 agents per organization
   * 8 days of data per agent
 
-Documentation is organizaed into sections according to features and components.
+Documentation is organizaed into sections
+according to features and components of |PCT|.
 The first section covers basic concepts and provides links to related material.
 
 .. toctree::
-  :caption: Contents
   :maxdepth: 1
 
   Getting Started <get-started>

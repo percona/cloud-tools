@@ -12,7 +12,7 @@ The following are key features of Percona Agent:
 
 **Free**
   You can freely deploy Percona Agent on any Linux host with one command.
-  For more information, see the :ref:`install`.
+  For more information, see the :ref:`Installation Guide <install>`.
 
 **Open-source**
   Percona Agent source code is available on
@@ -23,8 +23,9 @@ The following are key features of Percona Agent:
   through a secure websocket connection to protect your data.
   For more information, see :ref:`security`.
 
+This section covers the following topics related to Percona Agent:
+
 .. toctree::
-  :caption: Contents of this sectione
   :maxdepth: 1
 
   Release Notes <release-notes/index>

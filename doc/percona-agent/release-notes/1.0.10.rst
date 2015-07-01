@@ -1,0 +1,43 @@
+======================
+ Percona Agent 1.0.10
+======================
+
+Percona is glad to announce the release of Percona Agent 1.0.10 on January 6th 2015. Downloads are available from our download site `here <http://www.percona.com/downloads/percona-agent/percona-agent-1.0.10>`_. Percona Agent can be installed or updated as described in the `manual <http://cloud-docs.percona.com/index.html>`_. 
+
+New Features
+------------
+
+ * *Percona Agent* has improved the data sender timeout handling.
+
+ * New ``--status`` option has been implemented which can be used to get information on agent's status via API
+
+ * *Percona Agent* now enables the data compression when it gets installed.
+
+ * New ``--agent-mysql-user`` and ``--agent-mysql-pass`` options have been implemented to support installing agent with already existing user which has proper privileges on the server.
+
+ * Instead of general ``Error has occurred`` message when agent fails to connect to the server, *Percona Agent* now provides user-friendly error message with additional details for troubleshooting.
+ 
+ * *Percona Agent* now reports sender statistics for last 24 hours alongside with the last value.
+
+ * *Percona Agent* user is now set up with `max_user_connections <https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_user_connections>`_ set to ``5`` to remove the possibility that *Percona Agent* could use up all the connections. This change only affects the new installations (unless the same limit is added manually for existing users).
+ 
+ * *Percona Agent* now provides better insight into the agent's server-side data spool by implementing the ``data-spooler-count``, ``data-spooler-size``, and ``data-spooler-oldest`` statuses.
+
+ * Normally agent status is only obtainable via API. If API or network is down, ``SIGUSR1`` signal can now be used by user to get agent status locally. 
+
+ * In case agent's primary websocket fails somehow, ``SIGHUP`` signal can be used to provide a local, manual override to reconnect without having to restart the agent and without interrupting the data collection.
+
+Bugs Fixed
+----------
+
+ * The installation script did not work with ``--help`` option if the agent was already installed.
+
+ * InnoDB Stats were not re-enabled after MySQL server was restarted.
+
+ * Due to timeout error while closing the websocket, the agent could disconnect from the API without the API noticing it.
+ 
+ * In some cases ``USE database`` lines in the slow query log were not parsed correctly.
+
+ * *MySQL* restart monitor could send false-positive signals which could cause agent to unnecessarily restart Query Analytics`.
+
+ * *MySQL* `information <https://cloud.percona.com/instances/mysql>`_ wasn't updated after the server has been restarted.
